@@ -1,0 +1,43 @@
+*{box-sizing: border-box; font-family: ballega;}
+body{color: #333;}
+.w100{width: 100%;}
+
+@font-face {
+    font-family: ballega;
+    src: url(../font/Garet.otf);
+    }
+
+.flexbox{display: flex; flex-wrap: wrap;}
+.header__nav li{list-style-type: none; display: inline; margin: 10px 20px; }
+.header__nav ul{ margin: 0px; text-align: end; text-align: bottom; padding-top: 10px;}
+
+header{margin: 20px; padding-top: 30px; height: 60px; width: 90%; margin: auto;}
+header .flexbox{width: 100%;}
+.header__logo{width: 10%; padding-top: 10px; font-size: 20px; font-weight: bold;}
+.header__nav{width: 85%;}
+.header__img{width: 5%;}
+.header__img img{width: 40px; height:40px}
+
+main{padding: 30px 0px;}
+.main__copertina{width: 90%; margin: auto;}
+h3.header__logo{margin: 0px; padding: 0px;}
+h1.header__login{margin: 10px; padding: 0px;}
+
+.main__contenuto{display: flex; flex-wrap: wrap; width: 90%; margin: auto;}
+div.main__contenuto__item{border-right: 2px solid #333;}
+div.item40{width: 40%; margin-right: 20px;}
+div.item20{width: 16.5%; background-color: green;}
+.main__ct{margin: 20px;}
+.float-right{float: right; width: 50%;}
+
+.float-left{float: left; width: 50%;}
+h2{background-color: #000; color: white;}
+
+
+/* LOGIN */
+input{border: 1px solid #eee; border-radius: 10px; background-color: #eee;}
+.table__login{margin: auto; margin-top: 180px; padding: 40px; border-radius: 20px; background-color: #fff; box-shadow: 4px 2px 42px 5px rgba(0,0,0,0.3);}
+.input__submit{margin: auto; margin-top: 10px;}
+.input__text{margin: 0px 10px;}
+
+
