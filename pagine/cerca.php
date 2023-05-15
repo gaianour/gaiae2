@@ -33,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<title>Biblioteca - Ritira</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -80,20 +80,11 @@
 							echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
 						
 							foreach($ris as $riga){
-							// 	if ($riga["username_utente"]){
-							// 		$preso = "disabled";
-							// 		$disponibile = "No";
-							// 	}
-							// 	else {
-							// 		$preso = "";
-							// 		$disponibile = "Sì"; 
-							// 	}
+				
 								$matricola = $riga["matricola"];
 								$citta = $riga["citta"];
 								$superficie = $riga["superficie"];
 								$prezzo = $riga["prezzo"];
-								// $nome = $riga["nome"];
-								// $cognome = $riga["cognome"];
 								
 								echo '
 										citta: '.$citta.'
