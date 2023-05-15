@@ -65,17 +65,33 @@
 						$citta = $_POST["citta"];
 						$superficie = $_POST["superficie"];
 						$prezzo = $_POST["prezzo"];
+						// if ($prezzo == "") {
+						// 	$prezzo = 0;
+						// }
 
 
+						// $sql = "SELECT matricola, citta, superficie, prezzo
+						// 		FROM immobile 
+						// 		WHERE citta LIKE '%$citta%'
+						// 			AND superficie <= $superficie
+						// 			AND prezzo <= $prezzo";
 						$sql = "SELECT matricola, citta, superficie, prezzo
 								FROM immobile 
-								WHERE citta LIKE '%$citta%'
-									AND superficie LIKE '%$superficie%'
-									AND prezzo LIKE '%$prezzo%'";
+								WHERE 1=1";
+
+						if ($citta != "") {
+							$sql = $sql." AND citta = '$citta'";
+						}
+						if ($superficie != "") {
+							$sql = $sql." AND superficie <= $superficie";
+						}
+						if ($prezzo != "") {
+							$sql = $sql." AND prezzo <= $prezzo";
+						}
+
 
 						$ris = $conn->query($sql) or die("<p>Query fallita!</p>");
 						if ($ris->num_rows > 0) {
-							echo "<p>Scegli tra le soluzioni trovate i libri da ritirare.</p>";
 							echo "<table id='tabella_selezione_libri'>";
 							echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
 						
