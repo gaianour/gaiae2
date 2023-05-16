@@ -95,7 +95,7 @@ $database = "gaiae";
 
 						    $conn->close();
 
-                            echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 5 secondi.";
+                            echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.";
                             header('Refresh: 4; URL=../index.html');
 
                         } else {

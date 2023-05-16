@@ -55,6 +55,20 @@
 		<h1 style="text-align: center; margin-top: 50px">Ricerca e ritiro dei libri</h1>
 		<p>Cerca il libro che vuoi ritirare</p>
 		<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+			<table class="table__login">
+				<tr>
+					<td>città:</td> <td><input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>"></td>
+				</tr>
+				<tr>
+					<td>superficie:</td> <td><input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>"></td>
+				</tr>
+				<tr>
+					<td>prezzo:</td> <td><input class="prezzo" type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>"></td>
+				</tr>
+				<tr>
+					<td style="text-align: center; padding-top: 10px" colspan="2"><input type="submit" value="Cerca"/></td>
+				</tr>
+			</table>
 			<div class="barra__ricerca">
 				città:<input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>">
 				superficie:<input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>">
@@ -100,7 +114,7 @@
 
 						$ris = $conn->query($sql) or die("<p>Query fallita!</p>");
 						if ($ris->num_rows > 0) {
-							echo "<table id='tabella_selezione_libri'>";
+							echo "<table id='table__cerca'>";
 							echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
 						
 							foreach($ris as $riga){

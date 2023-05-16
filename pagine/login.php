@@ -22,12 +22,12 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
         <tr><td colspan="2"><h3 style="text-align: center;" class="header__logo">GAIAE</h3></td></tr>
         <tr><td colspan="2"><h1 style="text-align: center;">login</h1></td></tr>
         <form action="" method="post">
-            <tr><td>username: </td><td><input class="input__text" type="text" name="username"></td></tr>
-            <tr><td>password: </td><td><input class="input__text" type="password" name="password"></td></tr>
+            <tr><td>username: </td><td><input class="input__text" type="text" name="username" required></td></tr>
+            <tr><td>password: </td><td><input class="input__text" type="password" name="password" required></td></tr>
             <tr><td style="text-align: center;" colspan="2"><input type="submit"></td></tr>
             
 
-            <?php
+        <?php
         if (isset($_POST["username"]) and isset($_POST["password"])) {
             $conn = new mysqli($host, $user, $password_database, $database);
 
