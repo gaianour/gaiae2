@@ -40,4 +40,8 @@ input{border: 1px solid #eee; border-radius: 10px; background-color: #eee;}
 .input__submit{margin: auto; margin-top: 10px;}
 .input__text{margin: 0px 10px;}
 
+/* CERCA */
+.header__sottopagine{background-color: #000;}
+.barra__ricerca{justify-content: space-between; color: red;}
+
 

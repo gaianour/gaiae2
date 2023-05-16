@@ -36,24 +36,32 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-		<h1 style="text-align: center; margin-top: 0px">Ricerca e ritiro dei libri</h1>
+<header>
+        <div class="flexbox">
+            <div class="header__logo">GAIAE</div>
+            <div class="header__nav">
+                <ul>
+                    <li>buy</li>
+                    <li>rent</li>
+                    <li>agent</li>
+                    <li>about</li>
+                </ul>
+            </div>
+            <div class="header__img"><img class="w100" src="./immagini/logo.jpg" alt=""></div>
+            
+        </div>
+        
+    </header>
+		<h1 style="text-align: center; margin-top: 50px">Ricerca e ritiro dei libri</h1>
 		<p>Cerca il libro che vuoi ritirare</p>
 		<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-			<table>
-				<tr>
-					<td>città:</td> <td><input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td>superficie:</td> <td><input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td>prezzo:</td> <td><input class="prezzo" type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td style="text-align: center; padding-top: 10px" colspan="2"><input type="submit" value="Cerca"/></td>
-				</tr>
-			</table>
+			<div class="barra__ricerca">
+				città:<input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>">
+				superficie:<input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>">
+				prezzo:<input class="prezzo" type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>">
+				<input style="text-align: center; padding-top: 10px" colspan="2" type="submit" value="Cerca"/>
+			</div>
+				
 		</form>
 
 		<p></p>
