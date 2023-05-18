@@ -98,7 +98,6 @@
 
                         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
                         if ($ris->num_rows > 0) {
-                            echo "<table id='tabella_selezione_libri'>";
                             echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
                         
                             foreach($ris as $riga){
@@ -107,11 +106,13 @@
                                 $citta = $riga["citta"];
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
+                                $path=$riga["path"];
                                 
                                 echo '
                                         citta: '.$citta.'
                                         sup: '.$superficie.'
                                         prezzo: '.$prezzo.'
+                                        <img src='.$path.'>
                                     ';
                             }
                         }
