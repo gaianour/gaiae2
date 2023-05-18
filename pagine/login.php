@@ -63,4 +63,9 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
     </table>
 
 </body>
+<footer>
+    <?php
+        include('footer.php')
+    ?>
+</footer>
 </html>
