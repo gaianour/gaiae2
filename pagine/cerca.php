@@ -52,19 +52,19 @@
         </div>
         
     </header>
+        
         <h1 style="text-align: center; margin-top: 50px">Ricerca un immobile</h1>
         
-        <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-            <div class="barra__ricerca">
-                città:<input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>">
-                superficie:<input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>">
-                prezzo:<input class="prezzo" type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>">
-                <input style="text-align: center; padding-top: 10px" colspan="2" type="submit" value="Cerca"/>
-            </div>
+            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+                <div class="barra__ricerca" style="display:flex; justify-content:center">
+                    città:<input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>">
+                    superficie:<input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>">
+                    prezzo:<input class="prezzo" type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>">
+                    <input style="text-align: center; padding-top: 10px" colspan="2" type="submit" value="Cerca"/>
+                </div>
                 
         </form>
-
-        <p></p>
+    
 
         <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
             
