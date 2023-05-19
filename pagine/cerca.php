@@ -73,9 +73,17 @@
                         $citta = $_POST["citta"];
                         $superficie = $_POST["superficie"];
                         $prezzo = $_POST["prezzo"];
-                        
-                        $sql = "SELECT matricola, citta, superficie, prezzo, immagini.path
-                                FROM immobile JOIN immobile.matricola=immagini.matricola
+                        // if ($prezzo == "") {
+                        //  $prezzo = 0;
+                        // }
+
+                        // $sql = "SELECT matricola, citta, superficie, prezzo
+                        //      FROM immobile 
+                        //      WHERE citta LIKE '%$citta%'
+                        //          AND superficie <= $superficie
+                        //          AND prezzo <= $prezzo";
+                        $sql = "SELECT matricola, citta, superficie, prezzo
+                                FROM immobile 
                                 WHERE 1=1";
 
                         if ($citta != "") {
@@ -104,7 +112,8 @@
                                         citta: '.$citta.'
                                         sup: '.$superficie.'
                                         prezzo: '.$prezzo.'
-                                        <img src='.$path.'>
+                                        path:'.$path.'
+
                                     ';
                             }
                         }
