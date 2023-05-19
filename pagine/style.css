@@ -55,6 +55,33 @@ header .flexbox{width: 100%;}
 
 main{padding: 30px 0px;}
 
+.main__copertina {
+    /* position: relative; */
+    display: inline-block;
+  }
+
+.overlay {
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    color: #fff; /* Imposta il colore del testo */
+    padding: 20px;
+  }
+  
+.overlay h1{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .overlay p {
+    font-size: 16px;
+  }
+  
+.main__copertina{
+    position: relative;
+    display: inline-block;
+}
+
 .main__copertina{
     width: 90%; 
     margin: auto;}
@@ -70,11 +97,14 @@ h1.header__login{
 .main__contenuto{
     display: flex; 
     flex-wrap: wrap; 
-    width: 90%; 
-    margin: auto;}
+    width: 100%; 
+    
+}
 
 div.main__contenuto__item{
-    border-right: 2px solid #333;}
+    border: 1px solid #888;
+    border-radius: 10px 10px;
+}
 
 div.item40{
     width: 40%; 
@@ -84,15 +114,20 @@ div.item20{
     width: 16.5%; 
     background-color: green;}
 
-.main__ct{margin: 20px;}
+/* .main__ct{margin: 20px;} */
 
 .float-right{
     float: right; 
     width: 50%;}
 
-.float-left{
+img.float-left{
     float: left; 
-    width: 50%;}
+    width: 50%;
+    padding-right: 20px;
+}
+
+.testo{padding: 20px 80px 20px 80px; text-align: center;}
+
 
 
 /*media query main*/
