@@ -82,8 +82,8 @@
                         //      WHERE citta LIKE '%$citta%'
                         //          AND superficie <= $superficie
                         //          AND prezzo <= $prezzo";
-                        $sql = "SELECT matricola, citta, superficie, prezzo
-                                FROM immobile 
+                        $sql = "SELECT matricola, citta, superficie, prezzo, immagini.path
+                                FROM immobile JOIN immagini ON immobile.matricola=immagini.matricola
                                 WHERE 1=1";
 
                         if ($citta != "") {
