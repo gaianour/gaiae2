@@ -98,7 +98,7 @@ h1.header__login{
     display: flex; 
     flex-wrap: wrap; 
     width: 100%; 
-    
+    margin: auto;
 }
 
 div.main__contenuto__item{
@@ -140,13 +140,14 @@ img.float-left{
 /* LOGIN */
 input{
     border: 1px solid #eee; 
-    border-radius: 10px; 
+    border-radius: 2px; 
     background-color: #eee;}
 
 .table__login{
-    margin: auto; 
+    /* margin: auto;  */
     margin-top: 180px; 
-    padding: 40px; 
+    margin-bottom: 180px;
+    width: 30%;
     border-radius: 20px; 
     background-color: #fff; 
     box-shadow: 4px 2px 42px 5px rgba(0,0,0,0.3);}
