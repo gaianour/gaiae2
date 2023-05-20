@@ -47,7 +47,7 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
                 <tr><td colspan="2">password: </td></tr>
                 <tr><td colspan="2"><input class="input__text" type="password" name="password" required></td></tr>
 
-                <tr><td colspan="2" style="text-align: center;" colspan="2"><input type="submit"></td></tr> 
+                <tr><td colspan="2" style="text-align: center;" colspan="2"><input class="input__submit" type="submit"></td></tr> 
             
             
             

@@ -140,23 +140,36 @@ img.float-left{
 /* LOGIN */
 input{
     border: 1px solid #eee; 
-    border-radius: 2px; 
+    border-radius: 5px; 
     background-color: #eee;}
 
 .table__login{
-    /* margin: auto;  */
+    padding: 20px;
+    margin: auto; 
     margin-top: 180px; 
     margin-bottom: 180px;
     width: 30%;
-    border-radius: 20px; 
+    border-radius: 10px; 
     background-color: #fff; 
-    box-shadow: 4px 2px 42px 5px rgba(0,0,0,0.3);}
+    box-shadow: 4px 2px 20px 5px rgba(5,5,5,0.15);}
 
 .input__submit{
     margin: auto; 
-    margin-top: 10px;}
+    margin-top: 10px;
+  	width:70%;
+  	background-color:#4089a1;
+  	color: white;
+}
 
-.input__text{margin: 0px 10px;}
+.input__submit:hover{
+  background-color:#076b8f;
+  transition-property: background-color;
+	transition-duration: 0.2s;
+}
+
+.input__text{margin: 0px 15px;
+  width:90%;
+}
 
 /* CERCA */
 .header__sottopagine{background-color: #000;}
