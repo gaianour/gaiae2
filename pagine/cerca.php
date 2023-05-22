@@ -3,10 +3,14 @@
     $host= "localhost";
     $user= "root";
     $password_database= "";
-    $database = "gaiae2";
+    $database = "gaiae";
 
+    if (isset($_SESSION["username"])) {
+        $username = $_SESSION["username"];
+    } else {
+        $username = "";
+    }
     
-    $username = $_SESSION["username"];
 
     $conn = new mysqli($host,$user,$password_database,$database);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -82,7 +86,7 @@
                         //      WHERE citta LIKE '%$citta%'
                         //          AND superficie <= $superficie
                         //          AND prezzo <= $prezzo";
-                        $sql = "SELECT matricola, citta, superficie, prezzo, immagini.path
+                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, path
                                 FROM immobile JOIN immagini ON immobile.matricola=immagini.matricola
                                 WHERE 1=1";
 
@@ -96,6 +100,8 @@
                             $sql = $sql." AND prezzo <= $prezzo";
                         }
 
+                        echo $sql;
+
                         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
                         if ($ris->num_rows > 0) {
                             echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
@@ -108,12 +114,13 @@
                                 $prezzo = $riga["prezzo"];
                                 $path=$riga["path"];
                                 
-                                echo '
+                                echo '  <p>
                                         citta: '.$citta.'
                                         sup: '.$superficie.'
                                         prezzo: '.$prezzo.'
                                         path:'.$path.'
-
+                                        </p>
+                                        <img src="'.$path.'" alt="'.$path.'">
                                     ';
                             }
                         }
