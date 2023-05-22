@@ -14,21 +14,49 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 
 </head>
 <body>
-    <table class="table__login">
+    
+    <header>
+        <div class="flexbox">
+            <div class="header__logo">GAIAE</div>
+            <div class="header__nav">
+                <ul>
+                    <li>buy</li>
+                    <li>rent</li>
+                    <li>agent</li>
+                    <li>about</li>
+                </ul>
+            </div>
+            <div class="header__img"><img class="w100" src="./immagini/logo.jpg" alt=""></div>
+            
+        </div>
+        
+    </header>
+
+    <table class="table__login" style="width:30%;">
         <tr><td colspan="2"><h3 style="text-align: center;" class="header__logo">GAIAE</h3></td></tr>
-        <tr><td colspan="2"><h1 style="text-align: center;">login</h1></td></tr>
+        <tr><td><h3>login</h3></td><td><h3><a href="registrazione.php">registrazione</a></h3></td></tr>
         <form action="" method="post">
-            <tr><td>username: </td><td><input class="input__text" type="text" name="username" required></td></tr>
-            <tr><td>password: </td><td><input class="input__text" type="password" name="password" required></td></tr>
-            <tr><td style="text-align: center;" colspan="2"><input type="submit"></td></tr>
+            
+                <tr><td colspan="2">username: </td></tr>
+                <tr><td colspan="2"><input class="input__text" type="text" name="username" required></td></tr>
+
+                <tr><td colspan="2">password: </td></tr>
+                <tr><td colspan="2"><input class="input__text" type="password" name="password" required></td></tr>
+
+                <tr><td colspan="2" style="text-align: center;" colspan="2"><input class="input__submit" type="submit"></td></tr> 
+            
+            
+            
+            
             
 
         <?php
+        
         if (isset($_POST["username"]) and isset($_POST["password"])) {
             $conn = new mysqli($host, $user, $password_database, $database);
 
