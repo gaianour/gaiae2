@@ -129,7 +129,7 @@
                     
     
                 ?>
-                <p style="text-align: center; padding-top: 10px"><input type="submit" value="Conferma"/></p>
+                
         </form> 
 
     </div>  
