@@ -6,7 +6,7 @@ h2{
 
 a{text-decoration: none;}
 
-body{color: #333;}
+body{color: #333; width: 90%; margin: auto;}
 
 @font-face {
     font-family: ballega;
@@ -98,7 +98,7 @@ h1.header__login{
     display: flex; 
     flex-wrap: wrap; 
     width: 100%; 
-    margin: auto;
+
 }
 
 div.main__contenuto__item{
