@@ -31,7 +31,7 @@
         <div class="contenuto">
             <div class="contenuto__item">
                 <div class="contenuto__item__img">
-                    <img class="float-left" src="../immagini/mappa.jpeg" alt="immagine1">
+                    <img class="float-left" src="../immagini/mappa.jpg" alt="immagine1">
                 </div>
                 <div class="contenuto__item__text">
                     <h3>Ricerca subito un immobile</h3>
@@ -50,10 +50,7 @@
             </div>
 
             <div class="contenuto__item item20">
-                <div class="contenuto__item__text">
-                    <h3>Ricerca subito un immobile</h3>
-                    <h4>Stai cercando casa? visita la sezione "cerca" del nostro sito per non perderti neanche una novità!</h4>
-                </div>
+                  <h4 class="citazione">“Se più persone considerassero la casa prima dell'oro, il mondo sarebbe un posto più felice.”</h4>
             </div>
         </div>
 

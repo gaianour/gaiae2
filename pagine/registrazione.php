@@ -115,7 +115,7 @@ $database = "gaiae";
                             $conn->close();
 
                             echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.";
-                            header('Refresh: 4; URL=../index.html');
+                            header('Refresh: 4; URL=hom.php');
                         } else {
                             echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
                         }
