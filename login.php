@@ -14,7 +14,7 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./pagine/style.css">
     <title>Document</title>
 
 </head>
@@ -39,7 +39,7 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
 
     <table class="table__login" style="width:30%;">
         <tr><td colspan="2"><h3 style="text-align: center;" class="header__logo">GAIAE</h3></td></tr>
-        <tr><td><h3>login</h3></td><td><h3><a href="registrazione.php">registrazione</a></h3></td></tr>
+        <tr><td colspan="2"><h1 style="text-align: center;">accedi</h1></td></tr>
         <form action="" method="post">
             
                 <tr><td colspan="2">username: </td></tr>
@@ -49,6 +49,8 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
                 <tr><td colspan="2"><input class="input__text" type="password" name="password" required></td></tr>
 
                 <tr><td colspan="2" style="text-align: center;" colspan="2"><input class="input__submit" type="submit"></td></tr> 
+
+                <tr><td colspan="2"><h5 style="text-align:center">non hai un account? <b><u><a href="./pagine/registrazione.php">registrati ora</a></u></b></h4></h1></td></tr>
             
             
             
@@ -82,7 +84,7 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
                 $_SESSION["password"] = $password ;
                                         
                 $conn->close();
-                header("location: ../index.html");
+                header("location:pagine/home.php");
 
         }
     }

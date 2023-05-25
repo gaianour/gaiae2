@@ -26,43 +26,60 @@ $database = "gaiae";
     <title>Document</title>
 </head>
 <body>
-<table class="table__login">
+    <header>
+        <div class="flexbox">
+            <div class="header__logo">GAIAE</div>
+            <div class="header__nav">
+                <ul>
+                    <li>buy</li>
+                    <li>rent</li>
+                    <li>agent</li>
+                    <li>about</li>
+                </ul>
+            </div>
+            <div class="header__img"><img class="w100" src="./immagini/logo.jpg" alt=""></div>
+            
+        </div>
+        
+    </header>         
+
+    <table class="table__login">
         <tr><td colspan="2"><h3 style="text-align: center;" class="header__logo">GAIAE</h3></td></tr>
         <tr><td colspan="2"><h1 style="text-align: center;">registrazione</h1></td></tr>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
             
                 <tr>
                     <td>Username:</td>
-                    <td><input class="input_dati_personali" type="text" name="username" <?php echo "value = '$username'" ?> required></td>
+                    <td><input class="input__text" type="text" name="username" <?php echo "value = '$username'" ?> required></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input class="input_dati_personali" type="password" name="password" <?php echo "value = '$password'" ?> required></td>
+                    <td><input class="input__text" type="password" name="password" <?php echo "value = '$password'" ?> required></td>
                 </tr>
                 <tr>
                     <td>Conferma psw:</td>
-                    <td><input class="input_dati_personali" type="password" name="conferma" <?php echo "value = '$conferma'" ?> required></td>
+                    <td><input class="input__text" type="password" name="conferma" <?php echo "value = '$conferma'" ?> required></td>
                 </tr>
                 <tr>
                     <td>Nome:</td>
-                    <td><input class="input_dati_personali" type="text" name="nome" <?php echo "value = '$nome'" ?>></td>
+                    <td><input class="input__text" type="text" name="nome" <?php echo "value = '$nome'" ?> required></td>
                 </tr>
                 <tr>
                     <td>Cognome:</td>
-                    <td><input type="text" class="input_dati_personali" name="cognome" <?php echo "value = '$cognome'" ?>></td>
+                    <td><input type="text" class="input__text" name="cognome" <?php echo "value = '$cognome'" ?>required></td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td><input type="text" class="input_dati_personali" name="email" <?php echo "value = '$email'" ?>></td>
+                    <td><input type="email" class="input__text" name="email" <?php echo "value = '$email'" ?>required></td>
                 </tr>
                 <tr>
                     <td>Telefono:</td>
-                    <td><input type="text" class="input_dati_personali" name="telefono" <?php echo "value = '$telefono'" ?>></td>
+                    <td><input type="tel" min="3000000000" max="3999999999" class="input__text" name="telefono" <?php echo "value = '$telefono'" ?>required></td>
                 </tr>
                 <tr>
-                    
+
             
-            <tr><td style="text-align:center" colspan="2"><input type="submit" value="invia"></td></tr>
+            <tr><td style="text-align:center" colspan="2"><input type="submit" class="input__submit" value="invia"></td></tr>
         </form>
         </table>
 
@@ -89,18 +106,19 @@ $database = "gaiae";
                         $myquery = "INSERT INTO account (username, password, nome, cognome, email, telefono)
                                     VALUES ('$username', '$password', '$nome', '$cognome','$email', '$telefono')";
 
+                        echo $myquery;
                         if ($conn->query($myquery) === true) {
                             session_start();
-                            $_SESSION["username"]=$username;
+                            $_SESSION["username"] = $username;
 
-						    $conn->close();
+                            $conn->close();
 
                             echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.";
                             header('Refresh: 4; URL=../index.html');
-
                         } else {
                             echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
                         }
+                        
                     }
                 }
             }

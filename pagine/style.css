@@ -35,7 +35,9 @@ header{
     padding-top: 30px; 
     height: 60px; 
     width: 90%; 
-    margin: auto;}
+    margin: auto;
+    padding-bottom: 30px;
+}
 
 header .flexbox{width: 100%;}
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>progetto Gaie</title>
-    <link rel="stylesheet" href="./pagine/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,19 +19,19 @@
                     <li>about</li>
                 </ul>
             </div>
-            <div class="header__img"><img class="w100" src="./immagini/logo.jpg" alt=""></div>
+            <div class="header__img"><img class="w100" src="../immagini/logo.jpg" alt=""></div>
             
         </div>
         
     </header>
 
     <main>
-        <div><img class="copertina" src="./immagini/copertina.jpg" alt="immagine di copertina"></div>
+        <div><img class="copertina" src="../immagini/copertina.jpg" alt="immagine di copertina"></div>
 
         <div class="contenuto">
             <div class="contenuto__item">
                 <div class="contenuto__item__img">
-                    <img class="float-left" src="./immagini/mappa.jpeg" alt="immagine1">
+                    <img class="float-left" src="../immagini/mappa.jpeg" alt="immagine1">
                 </div>
                 <div class="contenuto__item__text">
                     <h3>Ricerca subito un immobile</h3>
@@ -41,7 +41,7 @@
 
             <div class="contenuto__item">
                 <div class="contenuto__item__img">
-                    <img class="float-left" src="./immagini/index1.jpg" alt="immagine2">
+                    <img class="float-left" src="../immagini/index1.jpg" alt="immagine2">
                 </div>
                 <div class="contenuto__item__text">
                     <h3>sei un babbpo</h3>
@@ -67,9 +67,9 @@
                 <a href="https://www.pratiche.it/perizia_immobiliare?utm_source=bing&utm_medium=cpc&msclkid=a99b4e62b0c716ba168e2a019830b522 "></a>
             </div>
         </div>
-        <a href="./pagine/login.php">vai al login</a>
-        <a href="./pagine/registrazione.php">registrazione</a>
-        <a href="./pagine/cerca.php">vai al cerca</a>
+        <a href="../login.php">vai al login</a>
+        <a href="registrazione.php">registrazione</a>
+        <a href="cerca.php">vai al cerca</a>
         
     </main>
 </body>
