@@ -49,15 +49,7 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
                 <tr><td colspan="2"><input class="input__text" type="password" name="password" required></td></tr>
 
                 <tr><td colspan="2" style="text-align: center;" colspan="2"><input class="input__submit" type="submit"></td></tr> 
-
-                <tr><td colspan="2"><h5 style="text-align:center">non hai un account? <b><u><a href="./pagine/registrazione.php">registrati ora</a></u></b></h4></h1></td></tr>
-            
-            
-            
-            
-            
-
-        <?php
+                <?php
         
         if (isset($_POST["username"]) and isset($_POST["password"])) {
             $conn = new mysqli($host, $user, $password_database, $database);
@@ -65,38 +57,44 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
             if ($conn === false){
                 die("connessione fallita");
             }
-            
-            $myquery = "SELECT username, password 
-							FROM account 
-							WHERE username='$username'
-								AND password='$password'";
+        
+        $myquery = "SELECT username, password 
+                        FROM account 
+                        WHERE username='$username'
+                            AND password='$password'";
 
-            $ris = $conn->query($myquery) or die("<p>Query fallita! ".$conn->error."</p>");
-            
-            if($ris->num_rows == 0){
-                echo "<p>Utente non trovato o password errata</p>";
-                $conn->close();
-            } 
-            else {
-                echo "<p>Utente trovato</p>";
+        $ris = $conn->query($myquery) or die("<p>Query fallita! ".$conn->error."</p>");
+        
+        if($ris->num_rows == 0){
+            echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Utente non trovato o password errata</h5></td></tr>";
+            $conn->close();
+        } 
+        else {
+            echo "<p>Utente trovato</p>";
 
-                $_SESSION["username"] = $username;
-                $_SESSION["password"] = $password ;
-                                        
-                $conn->close();
-                header("location:pagine/home.php");
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $password ;
+                                    
+            $conn->close();
+            header("location:pagine/home.php");
 
         }
-    }
-            ?>
+        }
+        ?>
+
+                <tr><td colspan="2"><h5 style="text-align:center">non hai un account? <b><u><a href="./pagine/registrazione.php">registrati ora</a></u></b></h4></h1></td></tr>
+            
         </form>
+
+
         
     </table>
+    
 
 </body>
 <footer>
     <?php
-        include('footer.php')
+        include('./pagine/footer.php')
     ?>
 </footer>
 </html>

@@ -58,20 +58,8 @@
         </div>
 
     </main>
-
-    <main>
-
-            <div class="main__contenuto__item item20">
-                <h3>Hai bisogno di sapere quanto vale il tuo immobile? 
-                Vai su questo sito per scoprire quanto potresti ricavare dalla vendita!</h3>
-                <a href="https://www.pratiche.it/perizia_immobiliare?utm_source=bing&utm_medium=cpc&msclkid=a99b4e62b0c716ba168e2a019830b522 "></a>
-            </div>
-        </div>
-        <a href="../login.php">vai al login</a>
-        <a href="registrazione.php">registrazione</a>
         <a href="cerca.php">vai al cerca</a>
-        
-    </main>
+
 </body>
 <footer>
 </footer>

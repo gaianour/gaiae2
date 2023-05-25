@@ -4,7 +4,7 @@ h2{
     background-color: #000; 
     color: white;}
 
-a{text-decoration: none;}
+a{text-decoration: none; color: #333; }
 
 body{color: #333; width: 90%; margin: auto;}
 
@@ -59,6 +59,7 @@ main{width: 90%; margin: auto;}
 
 .copertina {
     width: 100%;
+    padding-top: 40px;
   }
 
 h3.header__logo{
@@ -73,11 +74,10 @@ h1.header__login{
     display: flex;  
     width: 100%; 
     justify-content: space-between;
+    padding-top:30px;
 }
 
 div.contenuto__item{
-    border: 1px solid #888;
-    border-radius: 10px 10px;
     padding: 20px;
     width: 40%;
     display: flex;
@@ -121,6 +121,13 @@ img.floeat_left{
     .main__contenuto{width: 100%;}
     div.item40{width: 100%;height: 40%;padding: 10%; }
     div.item20{width: 40%; margin:auto; height:40%; margin-bottom: 10%; border-radius: 5%; padding-left: 3%;}
+    .table__login{
+        padding: 20px;
+        margin: auto; 
+        margin-top: 30px; 
+        margin-bottom: 180px;
+        width: 0%;
+    }
 }
 
 /* LOGIN */
@@ -132,7 +139,7 @@ input{
 .table__login{
     padding: 20px;
     margin: auto; 
-    margin-top: 180px; 
+    margin-top: 100px; 
     margin-bottom: 180px;
     width: 30%;
     border-radius: 10px; 
@@ -141,7 +148,8 @@ input{
 
 .input__submit{
     margin: auto; 
-    margin-top: 10px;
+    margin-top: 20px;
+    padding: 10px;
   	width:70%;
   	background-color:#4089a1;
   	color: white;
@@ -155,6 +163,12 @@ input{
 
 .input__text{margin: 0px 15px;
   width:90%;
+}
+
+h5.messaggio__errore {
+  color: rgb(191, 35, 11);
+  text-align:center;
+  margin-bottom:0px;
 }
 
 /* CERCA */

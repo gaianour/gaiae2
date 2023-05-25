@@ -80,8 +80,9 @@ $database = "gaiae";
 
             
             <tr><td style="text-align:center" colspan="2"><input type="submit" class="input__submit" value="invia"></td></tr>
+            
         </form>
-        </table>
+        
 
         <?php
             if(isset($_POST["username"]) and isset($_POST["password"])) {
@@ -100,7 +101,7 @@ $database = "gaiae";
 
                     $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
                     if ($ris->num_rows > 0) {
-                        ?> <p style="text-align: center">Lo username è già stato usato, si è pregati di cambiarlo</p><?php
+                        echo "<tr><td colspan='2'><div class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</div></td></tr>";
                     } else {
 
                         $myquery = "INSERT INTO account (username, password, nome, cognome, email, telefono)
@@ -123,7 +124,8 @@ $database = "gaiae";
                 }
             }
             ?>
-       
+            <tr><td colspan="2"><h5 style="text-align:center">hai già un account? <b><u><a href="../login.php">accedi</a></u></b></h4></h1></td></tr>
+       </table>
         
  
 
