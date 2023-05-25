@@ -52,39 +52,12 @@ header .flexbox{width: 100%;}
 .header__img img{width: 40px; height:40px}
 
 /*MAIN*/
+main{width: 90%; margin: auto;}
 
-main{padding: 30px 0px;}
 
-.main__copertina {
-    /* position: relative; */
-    display: inline-block;
+.copertina {
+    width: 100%;
   }
-
-.overlay {
-    /* position: absolute; */
-    bottom: 0;
-    left: 0;
-    color: #fff; /* Imposta il colore del testo */
-    padding: 20px;
-  }
-  
-.overlay h1{
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .overlay p {
-    font-size: 16px;
-  }
-  
-.main__copertina{
-    position: relative;
-    display: inline-block;
-}
-
-.main__copertina{
-    width: 90%; 
-    margin: auto;}
 
 h3.header__logo{
     margin: 0px; 
@@ -94,16 +67,30 @@ h1.header__login{
     margin: 10px; 
     padding: 0px;}
 
-.main__contenuto{
-    display: flex; 
-    flex-wrap: wrap; 
+.contenuto{
+    display: flex;  
     width: 100%; 
-
+    justify-content: space-between;
 }
 
-div.main__contenuto__item{
+div.contenuto__item{
     border: 1px solid #888;
     border-radius: 10px 10px;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+}
+div.contenuto__item__img{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    overflow: hidden;
+}
+
+div.contenuto__item__text{
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
 }
 
 div.item40{
@@ -114,19 +101,16 @@ div.item20{
     width: 16.5%; 
     background-color: green;}
 
-/* .main__ct{margin: 20px;} */
 
 .float-right{
     float: right; 
     width: 50%;}
 
-img.float-left{
+img.floeat_left{
     float: left; 
-    width: 50%;
-    padding-right: 20px;
+    width: 100%;
 }
 
-.testo{padding: 20px 80px 20px 80px; text-align: center;}
 
 
 
