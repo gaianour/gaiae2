@@ -121,10 +121,25 @@
                                 $citta = $riga["citta"];
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
-                                $path=$riga["path"];
-                                
-                                echo '<img src="'.$path.'" alt="'.$path.'">
-                                            ';
+                                echo"
+                                <p> la casa che hai scelto è a $citta</p>
+                                    <p> la sua matricola è:$matricola</p>
+                                    <p> il suo prezzo è:$prezzo</p> ";
+
+                                $sql2 = "SELECT path
+                                        FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
+                                        WHERE città='$citta'";  //poi dovrò scrivere or prezzo=prezzo
+
+                                $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
+
+                                if ($ris2->num_rows > 0){
+                                    foreach($ris2 as $riga2){
+                                        $path=$riga2["path"];
+                                        
+                                        echo "<img src=".$riga2["path"]."> ";
+                                    }
+                                }
+
                             } // fine foreach
                             echo "</div>";
                         // } // fine if numrows 0
