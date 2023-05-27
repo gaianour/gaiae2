@@ -1,9 +1,5 @@
 *{box-sizing: border-box; font-family: ballega;}
 .w100{width: 100%;}
-h2{
-    background-color: #000; 
-    color: white;}
-
 a{text-decoration: none; color: #333; }
 
 body{color: #333; width: 90%; margin: auto;}
@@ -189,8 +185,10 @@ h5.messaggio__errore {
 
 .barra__ricerca{
     justify-content: space-between; 
-    color: red;}
-
+    color: #333;
+    background-color: ;
+    padding: 20px;
+}
 
 /*OUTPUT ANSWERS*/
 #table__login{
