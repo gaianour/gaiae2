@@ -4,9 +4,9 @@ h2{
     background-color: #000; 
     color: white;}
 
-a{text-decoration: none;}
+a{text-decoration: none; color: #333; }
 
-body{color: #333;}
+body{color: #333; width: 90%; margin: auto;}
 
 @font-face {
     font-family: ballega;
@@ -35,7 +35,9 @@ header{
     padding-top: 30px; 
     height: 60px; 
     width: 90%; 
-    margin: auto;}
+    margin: auto;
+    padding-bottom: 30px;
+}
 
 header .flexbox{width: 100%;}
 
@@ -52,39 +54,13 @@ header .flexbox{width: 100%;}
 .header__img img{width: 40px; height:40px}
 
 /*MAIN*/
+main{width: 90%; margin: auto;}
 
-main{padding: 30px 0px;}
 
-.main__copertina {
-    /* position: relative; */
-    display: inline-block;
+.copertina {
+    width: 100%;
+    padding-top: 40px;
   }
-
-.overlay {
-    /* position: absolute; */
-    bottom: 0;
-    left: 0;
-    color: #fff; /* Imposta il colore del testo */
-    padding: 20px;
-  }
-  
-.overlay h1{
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .overlay p {
-    font-size: 16px;
-  }
-  
-.main__copertina{
-    position: relative;
-    display: inline-block;
-}
-
-.main__copertina{
-    width: 90%; 
-    margin: auto;}
 
 h3.header__logo{
     margin: 0px; 
@@ -94,16 +70,40 @@ h1.header__login{
     margin: 10px; 
     padding: 0px;}
 
-.main__contenuto{
-    display: flex; 
-    flex-wrap: wrap; 
+.contenuto{
+    display: flex;  
     width: 100%; 
-    margin: auto;
+    justify-content: space-between;
+    padding-top:30px;
 }
 
-div.main__contenuto__item{
-    border: 1px solid #888;
-    border-radius: 10px 10px;
+div.contenuto__item{
+    padding: 20px;
+    width: 40%;
+    display: flex;
+}
+div.contenuto__item__img{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    overflow: hidden;
+}
+
+div.contenuto__item__text{
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+div.contenuto__item__text.item20{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.contenuto__item__text h3{
+    margin-top: 0px;
 }
 
 div.item40{
@@ -112,22 +112,21 @@ div.item40{
 
 div.item20{
     width: 16.5%; 
-    background-color: green;}
+    background-color: #333;
+    color: #fff;
+}
 
-/* .main__ct{margin: 20px;} */
 
 .float-right{
     float: right; 
     width: 50%;}
 
-img.float-left{
+img.floeat_left{
     float: left; 
-    width: 50%;
-    padding-right: 20px;
+    width: 100%;
 }
 
-.testo{padding: 20px 80px 20px 80px; text-align: center;}
-
+h4.citazione {margin: 20px 0px 20px 0px; font-style: italic;}
 
 
 /*media query main*/
@@ -135,6 +134,13 @@ img.float-left{
     .main__contenuto{width: 100%;}
     div.item40{width: 100%;height: 40%;padding: 10%; }
     div.item20{width: 40%; margin:auto; height:40%; margin-bottom: 10%; border-radius: 5%; padding-left: 3%;}
+    .table__login{
+        padding: 20px;
+        margin: auto; 
+        margin-top: 30px; 
+        margin-bottom: 180px;
+        width: 0%;
+    }
 }
 
 /* LOGIN */
@@ -146,7 +152,7 @@ input{
 .table__login{
     padding: 20px;
     margin: auto; 
-    margin-top: 180px; 
+    margin-top: 100px; 
     margin-bottom: 180px;
     width: 30%;
     border-radius: 10px; 
@@ -155,7 +161,8 @@ input{
 
 .input__submit{
     margin: auto; 
-    margin-top: 10px;
+    margin-top: 20px;
+    padding: 10px;
   	width:70%;
   	background-color:#4089a1;
   	color: white;
@@ -169,6 +176,12 @@ input{
 
 .input__text{margin: 0px 15px;
   width:90%;
+}
+
+h5.messaggio__errore {
+  color: rgb(191, 35, 11);
+  text-align:center;
+  margin-bottom:0px;
 }
 
 /* CERCA */

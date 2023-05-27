@@ -103,19 +103,18 @@
                         echo $sql;
 
                         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
-                        $case
                         if ($ris->num_rows > 0) {
                             echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
-                            echo "<div class="owl-carousel owl-theme" >"
-                                            <div class="item" ><h4><img src="immagini/immagini index/car1.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car2.JPG" alt=""> </h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car3.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car4.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car5.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car6.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car7.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car8.JPG" alt=""></h4></div>
-                                            <div class="item"><h4><img src="immagini/immagini index/car9.JPG" alt=""></h4></div>
+                            // echo "<div class="owl-carousel owl-theme" >"
+                            //                 <div class="item" ><h4><img src="immagini/immagini index/car1.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car2.JPG" alt=""> </h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car3.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car4.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car5.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car6.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car7.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car8.JPG" alt=""></h4></div>
+                            //                 <div class="item"><h4><img src="immagini/immagini index/car9.JPG" alt=""></h4></div>
                             foreach($ris as $riga){
                                                 
                                 $matricola = $riga["matricola"];
@@ -127,12 +126,12 @@
                                 echo '<img src="'.$path.'" alt="'.$path.'">
                                             ';
                             } // fine foreach
-                            echo "</div>"
-                        } // fine if numrows 0
+                            echo "</div>";
+                        // } // fine if numrows 0
                         echo "</table>";
                     }
                     
-                    
+                }
                 ?>
                 
         </form> 
