@@ -31,7 +31,7 @@
         <div class="contenuto">
             <div class="contenuto__item">
                 <div class="contenuto__item__img">
-                    <img class="float-left" src="../immagini/mappa.jpg" alt="immagine1">
+                    <img class="float-left" src="../immagini/index1.jpg" alt="immagine1">
                 </div>
                 <div class="contenuto__item__text">
                     <h3>Ricerca subito un immobile</h3>
@@ -41,7 +41,7 @@
 
             <div class="contenuto__item">
                 <div class="contenuto__item__img">
-                    <img class="float-left" src="../immagini/index1.jpg" alt="immagine2">
+                    <img class="float-left" src="../immagini/mappa.jpg" alt="immagine2">
                 </div>
                 <div class="contenuto__item__text">
                     <h3>sei un babbpo</h3>
@@ -51,6 +51,13 @@
 
             <div class="contenuto__item item20">
                   <h4 class="citazione">“Se più persone considerassero la casa prima dell'oro, il mondo sarebbe un posto più felice.”</h4>
+            </div>
+        </div>
+
+        <h2>Scopri alcune delle nostre migliori offerte</h2>
+        <div class="contenuto">
+            <div class="contenuto__item item30">
+                
             </div>
         </div>
 
