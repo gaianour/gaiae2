@@ -86,8 +86,8 @@
                         //      WHERE citta LIKE '%$citta%'
                         //          AND superficie <= $superficie
                         //          AND prezzo <= $prezzo";
-                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, path
-                                FROM immobile JOIN immagini ON immobile.matricola=immagini.matricola
+                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo
+                                FROM immobile
                                 WHERE 1=1";
 
                         if ($citta != "") {
@@ -103,50 +103,44 @@
                         echo $sql;
 
                         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
+        
                         if ($ris->num_rows > 0) {
-                            echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
-                            // echo "<div class="owl-carousel owl-theme" >"
-                            //                 <div class="item" ><h4><img src="immagini/immagini index/car1.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car2.JPG" alt=""> </h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car3.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car4.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car5.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car6.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car7.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car8.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car9.JPG" alt=""></h4></div>
                             foreach($ris as $riga){
                                                 
                                 $matricola = $riga["matricola"];
                                 $citta = $riga["citta"];
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
+
                                 echo"
                                 <p> la casa che hai scelto è a $citta</p>
                                     <p> la sua matricola è:$matricola</p>
-                                    <p> il suo prezzo è:$prezzo</p> ";
+                                    <p> il suo prezzo è:$prezzo</p>
+
+                                         ";
 
                                 $sql2 = "SELECT path
-                                        FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
-                                        WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
+                                        FROM immagini 
+                                        WHERE città=$riga["citta"]";  //poi dovrò scrivere or prezzo=prezzo
 
                                 $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
-                               // echo "<div class="owl-carousel owl-theme" >"
+
                                 if ($ris2->num_rows > 0){
                                     foreach($ris2 as $riga2){
                                         $path=$riga2["path"];
                                         
-                                        echo "<img src=".$riga2["path"]."> ";
+                                        echo "
+                                          <img src=".$path." alt="">  
+                                        ";
                                     }
                                 }
-
                             } // fine foreach
-                            echo "</div>";
-                        // } // fine if numrows 0
+                            echo "</div>"
+                        } // fine if numrows 0
                         echo "</table>";
                     }
                     
-                }
+                    
                 ?>
                 
         </form> 
