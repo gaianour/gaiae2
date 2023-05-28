@@ -111,6 +111,7 @@ div.item20{
     background-color: #333;
     color: #fff;
 }
+div.item30{width: 30%;}
 
 
 .float-right{
@@ -185,7 +186,21 @@ h5.messaggio__errore {
 
 .barra__ricerca{
     justify-content: space-between; 
-    color: red;}
+    color: #333;
+}
+
+
+.barra__ricerca__campo{padding: 10px 30px 10px 30px;}
+input.barra__ricerca__input{margin-left: 10px;}
+
+.input__submit__cerca{
+    margin: auto; 
+    padding: 10px 1px;
+  	width: 20%;
+  	background-color:#4089a1;
+  	color: white;
+}
+
 
 
 /*OUTPUT ANSWERS*/

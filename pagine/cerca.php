@@ -63,11 +63,24 @@
         
             <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
                 <div class="barra__ricerca" style="display:flex; justify-content:center">
-                    città:<input type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>">
-                    superficie:<input class="superficie" type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>">
-                    prezzo:<input class="prezzo" type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>">
-                    <input style="text-align: center; padding-top: 10px" colspan="2" type="submit" value="Cerca"/>
+
+                    <div class="barra__ricerca__campo">
+                        città:<input class="barra__ricerca__input" type="text" name="citta" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ''; ?>">
+                    </div>
+
+                    <div class="barra__ricerca__campo">
+                        superficie:<input class="barra__ricerca__input"  type="text" name="superficie" value="<?php echo isset($_POST['superficie']) ? $_POST['superficie'] : ''; ?>">
+                    </div>
+                    
+                    <div class="barra__ricerca__campo">
+                        prezzo:<input class="barra__ricerca__input"  type="text" name="prezzo" value="<?php echo isset($_POST['prezzo']) ? $_POST['prezzo'] : ''; ?>">
+                    </div>
+    
                 </div>
+
+                <div class="barra__ricerca" style="display:flex; justify-content:center">
+                    <input class="input__submit__cerca" style="text-align: center; padding-top: 10px" colspan="2" type="submit" value="Cerca"/>
+                </div>  
                 
         </form>
     
@@ -112,24 +125,39 @@
                                 $citta = $riga["citta"];
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
-                                echo"
-                                <p> la casa che hai scelto è a $citta</p>
-                                    <p> la sua matricola è:$matricola</p>
-                                    <p> il suo prezzo è:$prezzo</p> ";
 
-                                $sql2 = "SELECT path
+                                ?> 
+                                <div class="contenuto">
+                                <div class="contenuto__item__text">
+                                    <?php
+                                            echo"
+                                            <p> la casa che hai scelto è a $citta</p>
+                                                <p> la sua matricola è:$matricola</p>
+                                                <p> il suo prezzo è:$prezzo</p> ";
+                                        ?>
+                                    </div> 
+                                    <?php
+                                    $sql2 = "SELECT path
                                         FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
                                         WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
-
-                                $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
-                                echo " <div class='owl-carousel owl-theme' >";
-                                if ($ris2->num_rows > 0){
-                                    foreach($ris2 as $riga2){
-                                        $path=$riga2["path"];
-                                        
-                                        echo "<div class='item' ><img src=".$path." ></div>";
-                                    }
-                                }
+                                        ?>
+                                
+                                <div class="contenuto__item__img item50">
+                                        <?php
+                                            $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
+                                            echo " <div class='owl-carousel owl-theme' >";
+                                            if ($ris2->num_rows > 0){
+                                                foreach($ris2 as $riga2){
+                                                    $path=$riga2["path"];
+                                                    
+                                                    echo "<div class='item' ><img src=".$path." ></div>";
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+                                    
+                                </div>
+                                <?php
 
                             } // fine foreach
                             echo "</div>";
