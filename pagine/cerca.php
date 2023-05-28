@@ -38,6 +38,8 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>Cerca immobili</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <header>
@@ -104,17 +106,6 @@
 
                         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
                         if ($ris->num_rows > 0) {
-                            echo "<tr> <th></th> <th>città</th> <th>superficie</th> <th>prezzo</th> </tr>";
-                            // echo "<div class="owl-carousel owl-theme" >"
-                            //                 <div class="item" ><h4><img src="immagini/immagini index/car1.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car2.JPG" alt=""> </h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car3.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car4.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car5.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car6.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car7.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car8.JPG" alt=""></h4></div>
-                            //                 <div class="item"><h4><img src="immagini/immagini index/car9.JPG" alt=""></h4></div>
                             foreach($ris as $riga){
                                                 
                                 $matricola = $riga["matricola"];
@@ -131,12 +122,12 @@
                                         WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
 
                                 $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
-                               // echo "<div class="owl-carousel owl-theme" >"
+                                echo " <div class='owl-carousel owl-theme' >";
                                 if ($ris2->num_rows > 0){
                                     foreach($ris2 as $riga2){
                                         $path=$riga2["path"];
                                         
-                                        echo "<img src=".$riga2["path"]."> ";
+                                        echo "<div class='item' ><img src=".$path." ></div>";
                                     }
                                 }
 
@@ -151,7 +142,35 @@
                 
         </form> 
 
-    </div>  
+    </div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" 
+         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" 
+         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+         <script type="text/javascript">
+             $('.owl-carousel').owlCarousel({
+                 loop:true,
+                 margin:30,
+                 nav:true,
+                 responsive:{
+                     0:{
+                         items:1
+                     },
+                     600:{
+                         items:2
+                     },
+                     1000:{
+                         items:3
+                     }
+                 }
+             })
+         </script>
+
                     
 </body>
 <footer>
