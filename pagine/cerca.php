@@ -128,10 +128,10 @@
 
                                 $sql2 = "SELECT path
                                         FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
-                                        WHERE città='$citta'";  //poi dovrò scrivere or prezzo=prezzo
+                                        WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
 
                                 $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
-
+                               // echo "<div class="owl-carousel owl-theme" >"
                                 if ($ris2->num_rows > 0){
                                     foreach($ris2 as $riga2){
                                         $path=$riga2["path"];
