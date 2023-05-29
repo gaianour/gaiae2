@@ -87,7 +87,7 @@ $database = "gaiae";
         <?php
             if(isset($_POST["username"]) and isset($_POST["password"])) {
                 if ($_POST["password"] != $_POST["conferma"]) {
-                    echo "Le password inserite non corrispondono";
+                    echo "<tr><td colspan='2'><h5 class='messaggio__errore'>le due password non corrispondono</h5></td></tr>";
                 } else {
                     $conn = new mysqli($host, $user, $password_database, $database);
                     if($conn->connect_error){
@@ -101,21 +101,20 @@ $database = "gaiae";
 
                     $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
                     if ($ris->num_rows > 0) {
-                        echo "<tr><td colspan='2'><div class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</div></td></tr>";
+                        echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</h5></td></tr>";
                     } else {
 
                         $myquery = "INSERT INTO account (username, password, nome, cognome, email, telefono)
                                     VALUES ('$username', '$password', '$nome', '$cognome','$email', '$telefono')";
 
-                        echo $myquery;
                         if ($conn->query($myquery) === true) {
                             session_start();
                             $_SESSION["username"] = $username;
 
                             $conn->close();
 
-                            echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.";
-                            header('Refresh: 4; URL=hom.php');
+                            echo "<tr><td colspan='2'><h5 class='messaggio'>Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.</h5></td></tr>";
+                            header('Refresh: 4; URL=home.php');
                         } else {
                             echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
                         }
