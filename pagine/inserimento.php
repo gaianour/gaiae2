@@ -26,12 +26,12 @@
 
     <main>
         <form action="<?php $_SERVEER['PHP_SELF']?>" method="post">
-            <table>
+            <table class= "table__login">
                 <tr>
                     <td>matricola immobile:</td>
                     <td><input type="number" name="matricola"></td>
                 </tr>
-                <tr>
+                <tr >
                     <td>superficie: (in mq)</td>
                     <td><input type="number" name="superficie"></td>
                 </tr>
