@@ -44,16 +44,19 @@
 <body>
 <header>
         <div class="flexbox">
+<<<<<<< HEAD
             <div class="header__logo"><a href="">GAIAE</a></div>
+=======
+            <div class="header__logo"><a href="home.php">GAIAE</a></div>
+>>>>>>> 9e504e53d3fdcd94b5fa92cace98a8e182eb970e
             <div class="header__nav">
                 <ul>
-                    <li>buy</li>
-                    <li>rent</li>
-                    <li>agent</li>
-                    <li>about</li>
+                    <li><a href="cerca.php">cerca</a></li>
+                    <li><a href="inserimento.php">inserisci immobili</a></li>
+                    <li><a href="logout.php">logout</a></li>
                 </ul>
             </div>
-            <div class="header__img"><img class="w100" src="./immagini/logo.jpg" alt=""></div>
+            <div class="header__img"><img class="w100" src="../immagini/logo.jpg" alt=""></div>
             
         </div>
         
@@ -115,7 +118,6 @@
                             $sql = $sql." AND prezzo <= $prezzo";
                         }
 
-                        echo $sql;
 
                         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
                         if ($ris->num_rows > 0) {
@@ -126,15 +128,37 @@
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
 
+                                
+
                                 ?> 
                                 <div class="contenuto">
                                 <div class="contenuto__item__text">
                                     <?php
+                                            // echo"<h2><u>$locali a $citta via $via $civico</u></h2>";
+                                            echo"<h2>trilocale a lesmo via roma 3</u></h2>";
                                             echo"
+<<<<<<< HEAD
                                             <p> la casa che hai scelto è a $citta</p>
                                                 <p> la sua matricola è:$matricola</p>
                                                 <p> il suo prezzo è:$prezzo</p> ";
                                                 ?><input type="button" value="aggiungi ai preferiti" name="preferito">
+=======
+                                            <table>
+                                            <tr>
+                                                <td><h3>prezzo</h3></td>
+                                                <td><h3>superficie</h3></td>
+                                                <td><h3>piani</h3></td>
+                                                <td><h3>matricola</h3></td>
+                                            </tr>
+                                            <tr>
+                                                <td><h3>$prezzo</h3></td>
+                                                <td><h3>$superficie</h3></td>
+                                                <td><h3>$n_piani</h3></td>
+                                                <td><h3>$matricola</h3></td>
+                                            </tr>
+                                        </table>";
+                                        ?>
+>>>>>>> 9e504e53d3fdcd94b5fa92cace98a8e182eb970e
                                     </div> 
                                     <?php
                                     $sql2 = "SELECT path

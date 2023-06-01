@@ -28,20 +28,19 @@ $database = "gaiae";
 <body>
     <header>
         <div class="flexbox">
-            <div class="header__logo">GAIAE</div>
+            <div class="header__logo">GAIA</div>
             <div class="header__nav">
                 <ul>
-                    <li>buy</li>
-                    <li>rent</li>
-                    <li>agent</li>
-                    <li>about</li>
+                    <li>cerca</li>
+                    <li>inserisci immobili</li>
+                    <li>logout</li>
                 </ul>
             </div>
-            <div class="header__img"><img class="w100" src="./immagini/logo.jpg" alt=""></div>
+            <div class="header__img"><img class="w100" src="../immagini/logo.jpg" alt=""></div>
             
         </div>
         
-    </header>         
+    </header>      
 
     <table class="table__login">
         <tr><td colspan="2"><h3 style="text-align: center;" class="header__logo">GAIAE</h3></td></tr>

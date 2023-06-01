@@ -10,13 +10,12 @@
 <body>
     <header>
         <div class="flexbox">
-            <div class="header__logo">GAIAE</div>
+            <div class="header__logo"><a href="home.php">GAIAE</a></div>
             <div class="header__nav">
                 <ul>
-                    <li>buy</li>
-                    <li>rent</li>
-                    <li>agent</li>
-                    <li>about</li>
+                    <li><a href="cerca.php">cerca</a></li>
+                    <li><a href="inserimento.php">inserisci immobili</a></li>
+                    <li><a href="logout.php">logout</a></li>
                 </ul>
             </div>
             <div class="header__img"><img class="w100" src="../immagini/logo.jpg" alt=""></div>
