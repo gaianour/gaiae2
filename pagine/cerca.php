@@ -44,7 +44,7 @@
 <body>
 <header>
         <div class="flexbox">
-            <div class="header__logo">GAIAE</div>
+            <div class="header__logo"><a href="">GAIAE</a></div>
             <div class="header__nav">
                 <ul>
                     <li>buy</li>
@@ -134,7 +134,7 @@
                                             <p> la casa che hai scelto è a $citta</p>
                                                 <p> la sua matricola è:$matricola</p>
                                                 <p> il suo prezzo è:$prezzo</p> ";
-                                        ?>
+                                                ?><input type="button" value="aggiungi ai preferiti" name="preferito">
                                     </div> 
                                     <?php
                                     $sql2 = "SELECT path
