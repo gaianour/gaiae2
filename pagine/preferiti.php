@@ -1,9 +1,7 @@
 <?php
 	session_start();
-	$host= "localhost";
-    $user= "root";
-    $password_database= "";
-    $database = "gaiae";
+	
+	require("../database/dati_db.php");
 
 	if(!isset($_SESSION['username'])){
 		header('location: ../login.php');
