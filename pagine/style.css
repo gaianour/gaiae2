@@ -216,7 +216,7 @@ input.barra__ricerca__input{margin-left: 10px;}
 
 /*FOOTER*/
 .footer{
-    position: fixed; 
+    position: absolute; 
     width: 100%; 
     background:black; 
     height: 110px;; 
