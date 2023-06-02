@@ -171,22 +171,40 @@
                                         
                                  echo"   </div> </div>";     /* serve sta roba?*/
                                 //preferiti
-                                if(isset($_POST["preferito"])){
-                                    $myquery="INSERT INTO preferito(username,matricola,preferito)
-                                           VALUES ('$username','$matricola','$preferito')" ; 
-                                    echo $sql;
-                                    if($conn->query($myquery)== true){
-                                        $_SESSION["preferito"]=$preferito;
-                                    }
+                                  /*      $myquery = "SELECT preferito 
+                                    FROM preferiti JOIN immobile ON immobile.matricola=preferiti.matricola
+                                    JOIN account ON account.username=preferiti.username 
+                                    WHERE username='" . $username. "' AND immobile='" . $matricola. "' AND preferito IS NOT NULL ";
+                            
 
+                            $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
+                            if ($ris->num_rows > 0) {
+                                echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</h5></td></tr>";
+                            } else {
+
+                                $myquery = "INSERT INTO preferiti (username,matricola,preferito)
+                                            VALUES ('$username', '$matricola', '$preferito')";
+
+                                if ($conn->query($myquery) === true) {
+                                    session_start();
+                                    $_SESSION["preferito"] = $preferito;
+
+                                    $conn->close();
+
+                                    echo "<tr><td colspan='2'><h5 class='messaggio'>Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.</h5></td></tr>";
+                                    header('Refresh: 4; URL=home.php');
+                                } else {
+                                    echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
                                 }
+            
                             } // fine foreach
                             echo "</div>";
                         // } // fine if numrows 0
-                        echo "</table>";
+                        echo "</table>";*/
                     }
                     
                 }
+            }
                 ?>
                 
         </form> 
