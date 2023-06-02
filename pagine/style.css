@@ -33,6 +33,7 @@ header{
     width: 90%; 
     margin: auto;
     padding-bottom: 30px;
+    top:0;
 }
 
 header .flexbox{width: 100%;}

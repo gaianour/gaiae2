@@ -44,14 +44,13 @@
 <body>
 <header>
         <div class="flexbox">
-<<<<<<< HEAD
-            <div class="header__logo"><a href="">GAIAE</a></div>
-=======
+
             <div class="header__logo"><a href="home.php">GAIAE</a></div>
->>>>>>> 9e504e53d3fdcd94b5fa92cace98a8e182eb970e
+
             <div class="header__nav">
                 <ul>
                     <li><a href="cerca.php">cerca</a></li>
+                    <li><a href="preferiti.php">preferiti</a></li>
                     <li><a href="inserimento.php">inserisci immobili</a></li>
                     <li><a href="logout.php">logout</a></li>
                 </ul>
@@ -137,12 +136,7 @@
                                             // echo"<h2><u>$locali a $citta via $via $civico</u></h2>";
                                             echo"<h2>trilocale a lesmo via roma 3</u></h2>";
                                             echo"
-<<<<<<< HEAD
-                                            <p> la casa che hai scelto è a $citta</p>
-                                                <p> la sua matricola è:$matricola</p>
-                                                <p> il suo prezzo è:$prezzo</p> ";
-                                                ?><input type="button" value="aggiungi ai preferiti" name="preferito">
-=======
+                                            <input type='button' value='aggiungi ai preferiti' name='preferito'>
                                             <table>
                                             <tr>
                                                 <td><h3>prezzo</h3></td>
@@ -151,14 +145,13 @@
                                                 <td><h3>matricola</h3></td>
                                             </tr>
                                             <tr>
-                                                <td><h3>$prezzo</h3></td>
-                                                <td><h3>$superficie</h3></td>
-                                                <td><h3>$n_piani</h3></td>
-                                                <td><h3>$matricola</h3></td>
+                                                <td><h3>".$prezzo."</h3></td>
+                                                <td><h3>".$superficie."</h3></td>
+                                                <td><h3>".$n_piani."</h3></td>
+                                                <td><h3>".$matricola."</h3></td>
                                             </tr>
                                         </table>";
                                         ?>
->>>>>>> 9e504e53d3fdcd94b5fa92cace98a8e182eb970e
                                     </div> 
                                     <?php
                                     $sql2 = "SELECT path
