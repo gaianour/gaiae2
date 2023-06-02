@@ -10,6 +10,23 @@
 	}
 	$username = $_SESSION["username"];
 
+    $conn = new mysqli($host,$user,$password_database,$database);
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		if(isset($_POST['preferiti'])){
+			$preferiti = $_POST['preferiti'];
+		} else {
+			$preferiti = array();
+		}
+		// $libri = isset($_POST['cod_libri']) ? $_POST['cod_libri'] : array(); // è un if else
+		foreach($preferiti as $riga) {
+  			//echo $libro . '<br/>';
+  			$sql = "UPDATE libri                     /* aggiungere dati  */
+  					SET username_utente = '$username'
+  					WHERE cod_libro = '$libro'";
+			$conn->query($sql) or die("<p>Query fallita!</p>");
+		}
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,70 +73,6 @@
 			}
 		?>
     <p> Queste sono le tue case preferite</p>
-    <?php
-
-				$myquery = "SELECT matricola,prezzo,superficie
-						FROM account JOIN immobile ON immobile.username=account.username  
-						WHERE username='".$username."'";
-                        echo $myquery;
-                $ris = $conn->query($myquery) or die("<p>Query fallita! ".$conn->error."</p>");
-				if ($ris->num_rows == 0) {
-					echo "<p style='text-align:center'> La tua lista dei preferiti è vuota!";
-				}
-                
-                    foreach($ris as $riga){
-                                                
-                        $matricola = $riga["matricola"];
-                        $citta = $riga["citta"];
-                        $superficie = $riga["superficie"];
-                        $prezzo = $riga["prezzo"];
-
-                        
-
-                        ?> 
-                        <div class="contenuto">
-                        <div class="contenuto__item__text">
-                            <?php
-                                    // echo"<h2><u>$locali a $citta via $via $civico</u></h2>";
-                                    echo"<h2>trilocale a lesmo via roma 3</u></h2>";
-                                    echo"
-                                    <input type='button' value='aggiungi ai preferiti' name='preferito'>
-                                    <table>
-                                    <tr>
-                                        <td><h3>prezzo</h3></td>
-                                        <td><h3>superficie</h3></td>
-                                        <td><h3>piani</h3></td>
-                                        <td><h3>matricola</h3></td>
-                                    </tr>
-                                    <tr>
-                                        <td><h3>".$prezzo."</h3></td>
-                                        <td><h3>".$superficie."</h3></td>
-                                        <td><h3>".$n_piani."</h3></td>
-                                        <td><h3>".$matricola."</h3></td>
-                                    </tr>
-                                </table>";
-                                ?>
-                            </div> 
-                            <?php
-                            $sql2 = "SELECT path
-                                FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
-                                WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
-                                ?>
-                        
-                        <div class="contenuto__item__img item50">
-                                <?php
-                                    $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
-                                    echo " <div class='owl-carousel owl-theme' >";
-                                    if ($ris2->num_rows > 0){
-                                        foreach($ris2 as $riga2){
-                                            $path=$riga2["path"];
-                                            
-                                            echo "<div class='item' ><img src=".$path." ></div>";
-                                        }
-                                    }
-                                    
-                                }           
-        ?>
             
 			
 			

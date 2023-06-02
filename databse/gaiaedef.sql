@@ -38,7 +38,7 @@ INSERT INTO `account` (`username`, `nome`, `cognome`, `password`, `email`) VALUE
 CREATE TABLE IF NOT EXISTS `immagini` (
   `id` varchar(50) NOT NULL,
   `path` varchar(60) NOT NULL,
-  `matricola` varchar(50) DEFAULT NULL,
+  `matricola` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `matricola` (`matricola`),
   CONSTRAINT `FK_immagini_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -46,20 +46,20 @@ CREATE TABLE IF NOT EXISTS `immagini` (
 
 -- Dump dei dati della tabella gaiae.immagini: ~10 rows (circa)
 INSERT INTO `immagini` (`id`, `path`, `matricola`) VALUES
-	('casa10', '../immagini/casa10.jpg', NULL),
-	('casa2', '../immagini/casa2.jpg', NULL),
-	('casa3', '../immagini/casa3.jpg', NULL),
-	('casa4', '../immagini/casa4.jpg', NULL),
-	('casa5', '../immagini/casa5.jpg', NULL),
-	('casa6', '../immagini/casa6.jpg', NULL),
-	('casa7', '../immagini/casa7.jpg', NULL),
-	('casa8', '../immagini/casa8.jpg', NULL),
-	('casa9', '.../immagini/casa9.jpg', NULL),
-	('case1', '../immagini/case1.jpg', NULL);
+	('casa10', '../immagini/casa10.jpg', 0),
+	('casa2', '../immagini/casa2.jpg', 0),
+	('casa3', '../immagini/casa3.jpg', 0),
+	('casa4', '../immagini/casa4.jpg', 0),
+	('casa5', '../immagini/casa5.jpg', 0),
+	('casa6', '../immagini/casa6.jpg', 0),
+	('casa7', '../immagini/casa7.jpg', 0),
+	('casa8', '../immagini/casa8.jpg', 0),
+	('casa9', '.../immagini/casa9.jpg', 0),
+	('case1', '../immagini/case1.jpg', 0);
 
 -- Dump della struttura di tabella gaiae.immobile
 CREATE TABLE IF NOT EXISTS `immobile` (
-  `matricola` varchar(50) NOT NULL DEFAULT '0',
+  `matricola` int(11) NOT NULL DEFAULT 0,
   `username` varchar(50) NOT NULL DEFAULT '0',
   `superficie` double NOT NULL DEFAULT 0,
   `prezzo` double NOT NULL DEFAULT 0,
@@ -74,16 +74,15 @@ CREATE TABLE IF NOT EXISTS `immobile` (
 
 -- Dump dei dati della tabella gaiae.immobile: ~2 rows (circa)
 INSERT INTO `immobile` (`matricola`, `username`, `superficie`, `prezzo`, `n_piani`, `citta`, `via`, `n_civico`) VALUES
-	('123', 'gia', 123333, 12345, 2, 'Lesmo', 'Grigan', '9'),
-	('234', '1', 1234, 123456, 1, 'Monza', 'Manzoni', '23');
+	(123, 'gia', 123333, 12345, 2, 'Lesmo', 'Grigan', '9'),
+	(234, '1', 1234, 123456, 1, 'Monza', 'Manzoni', '23');
 
 -- Dump della struttura di tabella gaiae.preferito
 CREATE TABLE IF NOT EXISTS `preferito` (
-  `matricola` varchar(50) NOT NULL DEFAULT '',
-  `preferito` varchar(50) NOT NULL DEFAULT '',
+  `matricola` int(11) NOT NULL DEFAULT 0,
   `username` varchar(50) NOT NULL DEFAULT '',
+  `preferiti` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`matricola`,`username`),
-  KEY `matricola_username` (`matricola`,`username`),
   KEY `FK_preferito_account` (`username`),
   CONSTRAINT `FK_preferito_account` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_preferito_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE NO ACTION ON UPDATE NO ACTION

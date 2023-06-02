@@ -103,7 +103,7 @@
                         //      WHERE citta LIKE '%$citta%'
                         //          AND superficie <= $superficie
                         //          AND prezzo <= $prezzo";
-                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, path
+                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, path, n_piani,indirizzo
                                 FROM immobile JOIN immagini ON immobile.matricola=immagini.matricola
                                 WHERE 1=1";
 
@@ -118,7 +118,7 @@
                         }
 
 
-                        $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
+                        $ris= $conn->query($sql) or die("<p> Errore di connessione</p>");
                         if ($ris->num_rows > 0) {
                             foreach($ris as $riga){
                                                 
@@ -126,34 +126,19 @@
                                 $citta = $riga["citta"];
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
+                                $n_piani=$riga["n_piani"];
+                                $indirizzo=$indirizzo["indirizzo"];
 
+                                echo"
+                                <p> la casa che hai scelto è a $citta</p>
+                                    <p> la sua matricola è:$matricola</p>
+                                    <p> il suo prezzo è:$prezzo</p> 
+                                    <p> il numero di piani è:$n_piani</p>
+                                    <p> il suo indirizzo è :$indirizzo</p>
+                                    ";
+
+                            
                                 
-
-                                ?> 
-                                <div class="contenuto">
-                                <div class="contenuto__item__text">
-                                    <?php
-                                            // echo"<h2><u>$locali a $citta via $via $civico</u></h2>";
-                                            echo"<h2>trilocale a lesmo via roma 3</u></h2>";
-                                            echo"
-                                            <input type='button' value='aggiungi ai preferiti' name='preferito'>
-                                            <table>
-                                            <tr>
-                                                <td><h3>prezzo</h3></td>
-                                                <td><h3>superficie</h3></td>
-                                                <td><h3>piani</h3></td>
-                                                <td><h3>matricola</h3></td>
-                                            </tr>
-                                            <tr>
-                                                <td><h3>".$prezzo."</h3></td>
-                                                <td><h3>".$superficie."</h3></td>
-                                                <td><h3>".$n_piani."</h3></td>
-                                                <td><h3>".$matricola."</h3></td>
-                                            </tr>
-                                        </table>";
-                                        ?>
-                                    </div> 
-                                    <?php
                                     $sql2 = "SELECT path
                                         FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
                                         WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
@@ -222,7 +207,7 @@
 </body>
 <footer>
     <?php
-        include('footer.php')
+      /*  include('footer.php')*/
     ?>
 </footer>
 </html>
