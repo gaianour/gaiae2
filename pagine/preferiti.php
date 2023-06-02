@@ -12,15 +12,14 @@
 
     $conn = new mysqli($host,$user,$password_database,$database);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if(isset($_POST['preferiti'])){
-			$preferiti = $_POST['preferiti'];
+		if(isset($_POST['preferito'])){
+			$preferiti = $_POST['preferito'];
 		} else {
 			$preferiti = array();
 		}
-		// $libri = isset($_POST['cod_libri']) ? $_POST['cod_libri'] : array(); // è un if else
 		foreach($preferiti as $riga) {
-  			//echo $libro . '<br/>';
-  			$sql = "UPDATE libri                     /* aggiungere dati  */
+  		
+  			$sql = "UPDATE libri               
   					SET username_utente = '$username'
   					WHERE cod_libro = '$libro'";
 			$conn->query($sql) or die("<p>Query fallita!</p>");

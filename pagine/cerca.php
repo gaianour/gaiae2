@@ -137,8 +137,7 @@
                                     <p> il suo prezzo è: $prezzo</p> 
                                     <p> la sua superficie è: $superficie mq</p>
                                     <p> il numero di piani è: $n_piani</p>
-                                    <p> il suo indirizzo è : $via , $n_civico</p>
-                                    ";
+                                    <p> il suo indirizzo è : $via , $n_civico</p>";
 
                             
                                 
@@ -147,7 +146,7 @@
                                         WHERE citta='".$citta."'";  
                             
                                         echo $sql2;
-                                 echo"<div class='contenuto__item__img item50'>";
+                                        echo"<div class='contenuto__item__img item50'>";
                                         
                                             $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
                                             echo " <div class='owl-carousel owl-theme' >";
