@@ -2,7 +2,7 @@
 .w100{width: 100%;}
 a{text-decoration: none; color: #333; }
 
-body{color: #333; width: 90%; margin: auto;min-height: 100vh; display: flex;flex-direction:column;}
+body{color: #333; width: 90%; margin: auto;}
 
 @font-face {
     font-family: ballega;
@@ -222,4 +222,4 @@ input.barra__ricerca__input{margin-left: 10px;}
     bottom: 0; 
     margin-top: 50px;
 }
-.footer_text{color: #eee; margin: auto;} 
+.footer_text{color: #eee; margin: auto; text-align: center;} 

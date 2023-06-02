@@ -26,6 +26,7 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
             <div class="header__nav">
                 <ul>
                     <li>cerca</li>
+                    <li>preferiti</li>
                     <li>inserisci immobili</li>
                     <li>logout</li>
                 </ul>
