@@ -80,7 +80,7 @@ div.contenuto__item{
     display: flex;
 }
 div.contenuto__item__img{
-    width: 50%;
+    width: 30%;
     height: 200px;
     display: flex;
     overflow: hidden;
@@ -102,7 +102,10 @@ div.contenuto__item__text.item20{
 .contenuto__item__text h3{
     margin-top: 0px;
 }
-
+.item25{
+    width: 20%;
+    padding: 5%;
+}
 div.item40{
     width: 40%; 
     margin-right: 20px;}
@@ -219,7 +222,7 @@ input.barra__ricerca__input{margin-left: 10px;}
     position: relative; 
     width: 100%; 
     background:black; 
-    height: 110px;; 
+    height: 110px; 
     bottom: 0; 
     margin-top: 50px;
 }

@@ -11,6 +11,7 @@
         $username = "";
     }
     
+    if(isset($_POST["preferito"])) {$preferito=$_POST["preferito"];} else{$preferito="";}
 
     $conn = new mysqli($host,$user,$password_database,$database);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -83,7 +84,7 @@
                 <div class="barra__ricerca" style="display:flex; justify-content:center">
                     <input class="input__submit__cerca" style="text-align: center; padding-top: 10px" colspan="2" type="submit" value="Cerca"/>
                 </div>  
-                
+            
         </form>
     
 
@@ -137,15 +138,25 @@
                                     <p> il suo prezzo è: $prezzo</p> 
                                     <p> la sua superficie è: $superficie mq</p>
                                     <p> il numero di piani è: $n_piani</p>
-                                    <p> il suo indirizzo è : $via , $n_civico</p>";
-
-                            
-                                
+                                    <p> il suo indirizzo è : $via , $n_civico</p>
+                                    
+                                    ";
+                                if(!isset($_POST["preferito"])){
+                                    ?>
+                                        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                                         aggiungi ai preferiti<input type="radio" value="preferito " name="preferito">
+                                         </form>
+                                        <?php
+                                }
+                                else if($_POST["preferiti"]!="")
+                                {
+                                    echo"<p>Questa casa è trai tuoi preferiti</p>";
+                                }
                                     $sql2 = "SELECT path
                                         FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
                                         WHERE citta='".$citta."'";  
                             
-                                        echo $sql2;
+                                    
                                         echo"<div class='contenuto__item__img item50'>";
                                         
                                             $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
@@ -158,18 +169,42 @@
                                                 }
                                             }
                                         
-                                 echo"   </div>
-                                    
-                                </div>";
+                                 echo"   </div> </div>";     /* serve sta roba?*/
+                                //preferiti
+                                  /*      $myquery = "SELECT preferito 
+                                    FROM preferiti JOIN immobile ON immobile.matricola=preferiti.matricola
+                                    JOIN account ON account.username=preferiti.username 
+                                    WHERE username='" . $username. "' AND immobile='" . $matricola. "' AND preferito IS NOT NULL ";
                             
 
+                            $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
+                            if ($ris->num_rows > 0) {
+                                echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</h5></td></tr>";
+                            } else {
+
+                                $myquery = "INSERT INTO preferiti (username,matricola,preferito)
+                                            VALUES ('$username', '$matricola', '$preferito')";
+
+                                if ($conn->query($myquery) === true) {
+                                    session_start();
+                                    $_SESSION["preferito"] = $preferito;
+
+                                    $conn->close();
+
+                                    echo "<tr><td colspan='2'><h5 class='messaggio'>Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 4 secondi.</h5></td></tr>";
+                                    header('Refresh: 4; URL=home.php');
+                                } else {
+                                    echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
+                                }
+            
                             } // fine foreach
                             echo "</div>";
                         // } // fine if numrows 0
-                        echo "</table>";
+                        echo "</table>";*/
                     }
                     
                 }
+            }
                 ?>
                 
         </form> 
@@ -209,7 +244,7 @@
 </body>
 <footer>
     <?php
-      /*  include('footer.php')*/
+       include('footer.php')
     ?>
 </footer>
 </html>
