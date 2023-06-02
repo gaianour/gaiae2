@@ -62,7 +62,7 @@
         </div>
 
     </main>
-        <a href="cerca.php">vai al cerca</a>
+
 
 </body>
 <footer>
