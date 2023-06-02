@@ -1,8 +1,7 @@
 <?php
-$host= "localhost";
-$user= "root";
-$password_database= "";
-$database = "gaiae";
+
+require("database/dati_db.php");
+
 session_start();
 if (isset($_POST["username"])) {$username = $_POST["username"];} else {$username = "";}
 if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password = "";}
