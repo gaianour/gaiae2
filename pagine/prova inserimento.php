@@ -84,21 +84,14 @@
                 <tr><td></td><td><input type="radio" name="locali" name="quadrilocale">quadrilocale</td></tr>
                 <tr><td></td><td><input type="radio" name="locali" name="quadrilocale+">quadrilocale+</td></tr>
 
+                
+
                 <tr>
                     <td colspan="2">
                         <input style="text-align:center" class="input__submit" type="submit" value="inserisci">
                     </td>
                 </tr>
-            
-           
-        </form>
-
-        <form action="../upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <input type="submit" name="upload" value="Carica file">
-        </form>
-
-        <?php
+                <?php
            
             if(isset($_POST["matricola"])){
                 echo "qua"; 
@@ -136,6 +129,51 @@
 
         ?>
          </table>
+        </form>
+
+        <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+                <tr>
+                    <td colspan="2">
+                    <form action="../upload.php" method="post" enctype="multipart/form-data">
+                        <input type="file" name="path">
+                        <input type="text" name="matricola" id="">
+                        <input type="submit" name="upload" value="Carica file">
+                    </form>
+                    </td>
+                </tr>
+
+                <?php
+                $myquery = "SELECT path, matricola 
+                FROM immagini
+                WHERE path='" . $_POST["path"] . "'
+                    AND matricola='" . $_POST["matricola"] . "' ";
+        
+
+                $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
+                if ($ris->num_rows > 0) {
+                    echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Un immobile con questa matricola esiste già, si è pregati di scegliere un altro numero</h5></td></tr>";
+                } else {
+
+                    $myquery = "INSERT INTO immagini (matricola, path)
+                                VALUES ('$matricola', '../immagini/$path')";
+
+                    if ($conn->query($myquery) === true) {
+                        
+                        $conn->close();
+
+                        echo "<tr><td colspan='2'><h5 class='messaggio'>Inserimento effettuato con successo!</h5></td></tr>";
+                    } else {
+                        echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
+                    }
+                }
+            ?>
+        
+        </form>
+
+        
+
+        
+        
 
     </main>
 </body>
