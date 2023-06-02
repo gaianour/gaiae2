@@ -41,16 +41,16 @@ CREATE TABLE IF NOT EXISTS `immagini` (
   `matricola` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `matricola` (`matricola`),
-  CONSTRAINT `FK_immagini_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_immagini_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella gaiae.immagini: ~10 rows (circa)
 INSERT INTO `immagini` (`id`, `path`, `matricola`) VALUES
-	('casa10', '../immagini/casa10.jpg', 0),
-	('casa2', '../immagini/casa2.jpg', 0),
-	('casa3', '../immagini/casa3.jpg', 0),
-	('casa4', '../immagini/casa4.jpg', 0),
-	('casa5', '../immagini/casa5.jpg', 0),
+	('casa10', '../immagini/casa10.jpg', 234),
+	('casa2', '../immagini/casa2.jpg', 234),
+	('casa3', '../immagini/casa3.jpg', 123),
+	('casa4', '../immagini/casa4.jpg', 234),
+	('casa5', '../immagini/casa5.jpg', 123),
 	('casa6', '../immagini/casa6.jpg', 0),
 	('casa7', '../immagini/casa7.jpg', 0),
 	('casa8', '../immagini/casa8.jpg', 0),
@@ -67,29 +67,21 @@ CREATE TABLE IF NOT EXISTS `immobile` (
   `citta` char(50) NOT NULL DEFAULT '0',
   `via` varchar(50) NOT NULL DEFAULT '0',
   `n_civico` varchar(50) NOT NULL DEFAULT '0',
+  `preferito` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`matricola`),
   KEY `username` (`username`),
   CONSTRAINT `FK_immobile_account` FOREIGN KEY (`username`) REFERENCES `account` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella gaiae.immobile: ~2 rows (circa)
-INSERT INTO `immobile` (`matricola`, `username`, `superficie`, `prezzo`, `n_piani`, `citta`, `via`, `n_civico`) VALUES
-	(123, 'gia', 123333, 12345, 2, 'Lesmo', 'Grigan', '9'),
-	(234, '1', 1234, 123456, 1, 'Monza', 'Manzoni', '23');
+INSERT INTO `immobile` (`matricola`, `username`, `superficie`, `prezzo`, `n_piani`, `citta`, `via`, `n_civico`, `preferito`) VALUES
+	(123, 'gia', 123333, 12345, 2, 'Lesmo', 'Grigan', '9', NULL),
+	(234, '1', 1234, 123456, 1, 'Monza', 'Manzoni', '23', NULL);
 
 -- Dump della struttura di tabella gaiae.preferito
-CREATE TABLE IF NOT EXISTS `preferito` (
-  `matricola` int(11) NOT NULL DEFAULT 0,
-  `username` varchar(50) NOT NULL DEFAULT '',
-  `preferiti` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`matricola`,`username`),
-  KEY `FK_preferito_account` (`username`),
-  CONSTRAINT `FK_preferito_account` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_preferito_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+IF NOT EXISTS ;
 
 -- Dump dei dati della tabella gaiae.preferito: ~0 rows (circa)
-
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
