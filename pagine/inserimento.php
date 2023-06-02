@@ -86,11 +86,27 @@
 
                 <tr>
                     <td colspan="2">
+                    <form action="../upload.php" method="post" enctype="multipart/form-data">
+                        <input type="file" name="file">
+                        <input type="submit" name="upload" value="Carica file">
+                    </form>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
                         <input style="text-align:center" class="input__submit" type="submit" value="inserisci">
                     </td>
                 </tr>
+
+                
+
+
+            
            
         </form>
+
+        
 
         <?php
            
