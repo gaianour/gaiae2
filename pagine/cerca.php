@@ -103,8 +103,8 @@
                         //      WHERE citta LIKE '%$citta%'
                         //          AND superficie <= $superficie
                         //          AND prezzo <= $prezzo";
-                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, path, n_piani,indirizzo
-                                FROM immobile JOIN immagini ON immobile.matricola=immagini.matricola
+                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, n_piani,via,n_civico
+                                FROM immobile 
                                 WHERE 1=1";
 
                         if ($citta != "") {
@@ -116,7 +116,7 @@
                         if ($prezzo != "") {
                             $sql = $sql." AND prezzo <= $prezzo";
                         }
-
+                        
 
                         $ris= $conn->query($sql) or die("<p> Errore di connessione</p>");
                         if ($ris->num_rows > 0) {
@@ -127,25 +127,28 @@
                                 $superficie = $riga["superficie"];
                                 $prezzo = $riga["prezzo"];
                                 $n_piani=$riga["n_piani"];
-                                $indirizzo=$indirizzo["indirizzo"];
+                                $via=$riga["via"];
+                                $n_civico=$riga["n_civico"];
+
 
                                 echo"
                                 <p> la casa che hai scelto è a $citta</p>
-                                    <p> la sua matricola è:$matricola</p>
-                                    <p> il suo prezzo è:$prezzo</p> 
-                                    <p> il numero di piani è:$n_piani</p>
-                                    <p> il suo indirizzo è :$indirizzo</p>
+                                    <p> la sua matricola è: $matricola</p>
+                                    <p> il suo prezzo è: $prezzo</p> 
+                                    <p> la sua superficie è: $superficie mq</p>
+                                    <p> il numero di piani è: $n_piani</p>
+                                    <p> il suo indirizzo è : $via , $n_civico</p>
                                     ";
 
                             
                                 
                                     $sql2 = "SELECT path
                                         FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
-                                        WHERE citta='".$citta."'";  //poi dovrò scrivere or prezzo=prezzo
-                                        ?>
-                                
-                                <div class="contenuto__item__img item50">
-                                        <?php
+                                        WHERE citta='".$citta."'";  
+                            
+                                        echo $sql2;
+                                 echo"<div class='contenuto__item__img item50'>";
+                                        
                                             $ris2 = $conn->query($sql2) or die("<p>Query fallita!</p>");
                                             echo " <div class='owl-carousel owl-theme' >";
                                             if ($ris2->num_rows > 0){
@@ -155,11 +158,11 @@
                                                     echo "<div class='item' ><img src=".$path." ></div>";
                                                 }
                                             }
-                                        ?>
-                                    </div>
+                                        
+                                 echo"   </div>
                                     
-                                </div>
-                                <?php
+                                </div>";
+                            
 
                             } // fine foreach
                             echo "</div>";
