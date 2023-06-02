@@ -6,6 +6,8 @@
     if(isset($_POST["citta"])){$citta=$_POST["citta"];}else{$citta="";}
     if(isset($_POST["via"])){$via=$_POST["via"];}else{$via="";}
     if(isset($_POST["n_civico"])){$n_civico=$_POST["n_civico"];}else{$n_civico="";}
+    if(isset($_POST["path"])){$path=$_POST["path"];}else{$path="";}
+    if(isset($_POST["matricola"])){$matricola=$_POST["matricola"];}else{$matricola="";}
 
     session_start();
 
@@ -132,30 +134,41 @@
         </form>
 
         <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
-                <tr>
-                    <td colspan="2">
+        <table>
+            <tr>
+                <td colspan="2">
                     <form action="../upload.php" method="post" enctype="multipart/form-data">
                         <input type="file" name="path">
-                        <input type="text" name="matricola" id="">
-                        <input type="submit" name="upload" value="Carica file">
+        
                     </form>
                     </td>
+            </tr>
+            <tr>
+                <td>matricola immobile</td>
+                <td><input type="text" name="matricola" id=""></td>
                 </tr>
 
+            <tr><td colspan="2"><input type="submit" name="upload" value="Carica file"></td></tr>
+        </table>
+                
+
                 <?php
-                $myquery = "SELECT path, matricola 
+
+$conn = new mysqli($host, $user, $password_database, $database);
+
+if($conn->connect_error){
+    die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
+}
+
+                $myquery = "SELECT matricola 
                 FROM immagini
-                WHERE path='" . $_POST["path"] . "'
-                    AND matricola='" . $_POST["matricola"] . "' ";
+                WHERE $matricola='" . $_POST["matricola"] . "' ";
         
 
                 $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
                 if ($ris->num_rows > 0) {
-                    echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Un immobile con questa matricola esiste già, si è pregati di scegliere un altro numero</h5></td></tr>";
-                } else {
-
-                    $myquery = "INSERT INTO immagini (matricola, path)
-                                VALUES ('$matricola', '../immagini/$path')";
+                    $myquery = "INSERT INTO immagini (path, matricola)
+                                VALUES ('../immagini/$path', '$matricola')";
 
                     if ($conn->query($myquery) === true) {
                         
@@ -165,6 +178,10 @@
                     } else {
                         echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
                     }
+
+                    
+                } else {
+                    echo "<tr><td colspan='2'><h5 class='messaggio__errore'>non esiste nessun immobile con questa matricola</h5></td></tr>";
                 }
             ?>
         
