@@ -99,7 +99,7 @@ require("../database/dati_db.php");
                         echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</h5></td></tr>";
                     } else {
 
-                        $myquery = "INSERT INTO account (username, password, nome, cognome, email, )
+                        $myquery = "INSERT INTO account (username, password, nome, cognome, email )
                                     VALUES ('$username', '$password', '$nome', '$cognome','$email')";
 
                         if ($conn->query($myquery) === true) {
