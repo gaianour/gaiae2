@@ -67,10 +67,10 @@ require("../database/dati_db.php");
                     <td>Email:</td>
                     <td><input type="email" class="input__text" name="email" <?php echo "value = '$email'" ?>required></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Telefono:</td>
                     <td><input type="tel" min="3000000000" max="3999999999" class="input__text" name="telefono" <?php echo "value = '$telefono'" ?>required></td>
-                </tr>
+                </tr> -->
                 <tr>
 
             
@@ -99,8 +99,8 @@ require("../database/dati_db.php");
                         echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Lo username è già stato usato, si è pregati di cambiarlo</h5></td></tr>";
                     } else {
 
-                        $myquery = "INSERT INTO account (username, password, nome, cognome, email, telefono)
-                                    VALUES ('$username', '$password', '$nome', '$cognome','$email', '$telefono')";
+                        $myquery = "INSERT INTO account (username, password, nome, cognome, email, )
+                                    VALUES ('$username', '$password', '$nome', '$cognome','$email')";
 
                         if ($conn->query($myquery) === true) {
                             session_start();

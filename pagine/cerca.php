@@ -119,8 +119,8 @@
                                 $n_piani=$riga["n_piani"];
                                 $via=$riga["via"];
                                 $n_civico=$riga["n_civico"];
-                                $locali=$riga["locali"];
-                                $map=$riga["map"];
+                               /* $locali=$riga["locali"];
+                                $map=$riga["map"];*/
                                 
 
 
@@ -131,11 +131,11 @@
                                     <p> la sua superficie è: $superficie mq</p>
                                     <p> il numero di piani è: $n_piani</p>
                                     <p> il suo indirizzo è : $via , $n_civico</p>
-                                    <p> Il numero di locali è: $locali</p> ";
+                                    ";
 
-                                if($map!='(NULL)'){
+                             /*   if($map!='(NULL)'){
                                     echo"<p> vai a scoprire la sua posizioe su <a href='$map'>google maps</a> </p>";
-                                }
+                                }*/
                                          
                                     
                         
