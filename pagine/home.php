@@ -44,7 +44,7 @@
                     <img class="float-left" src="../immagini/mappa.jpg" alt="immagine2">
                 </div>
                 <div class="contenuto__item__text">
-                    <h3>sei un babbpo</h3>
+                    
                     <h4>Registrandoti al nostro sito potrai scoprire nuove offerte di immobili ogni giorno. Condividi il nostro sito con i tuoi amici per avere sconti e offerte!</h4>
                 </div>
             </div>

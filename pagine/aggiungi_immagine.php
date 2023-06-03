@@ -14,10 +14,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>inserimento immagine</h1>
+<header>
+        <div class="flexbox">
+            <div class="header__logo"><a href="home.php">GAIAE</a></div>
+            <div class="header__nav">
+                <ul>
+                    <li><a href="cerca.php">cerca</a></li>
+                    <li><a href="preferiti.php"> preferiti</a></li>
+                    <li><a href="inserimento.php">inserisci immobili</a></li>
+                    <li><a href="logout.php">logout</a></li>
+                </ul>
+            </div>
+            <div class="header__img"><img class="w100" src="../immagini/logo.jpg" alt=""></div>
+            
+        </div>
+        
+    </header>
+    
+    <table class="table__login">
+        <tr>
+            <td colspan="2">
+            <h1>inserimento immagine</h1>
+            </td>
+        </tr>
+    
     <tr>
         <td>matricola: </td>
         <td><input type="text" name="matricola" id=""></td>
@@ -25,16 +49,17 @@
     <tr>
         <td colspan="2">
         <form action="../upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="file">
+            <input type="file" name="path">
             <input type="submit" name="upload" value="Carica file">
         </form>
         </td>
     </tr>
+    </table>
     
     <?php
            
             if(isset($_POST["matricola"])){
-                echo "qua"; 
+                 
                 $conn = new mysqli($host, $user, $password_database, $database);
 
                 if($conn->connect_error){
@@ -53,14 +78,10 @@
 
                         echo "<tr><td colspan='2'><h5 class='messaggio'>Inserimento effettuato con successo!</h5></td></tr>";
                     } else {
-                        echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
+                        echo "Non è stato possibile inserire l'immagine per il seguente motivo: " . $conn->error;
                     }
-                    echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Un immobile con questa matricola esiste già, si è pregati di scegliere un altro numero</h5></td></tr>";
-                } else {
-
                     
-                    
-                }
+                } 
             }
             
 
