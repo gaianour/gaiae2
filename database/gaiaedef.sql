@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella gaiae.account: ~10 rows (circa)
+-- Dump dei dati della tabella gaiae.account: ~8 rows (circa)
 INSERT INTO `account` (`username`, `nome`, `cognome`, `password`, `email`, `telefono`) VALUES
 	('1', 'g', 'g', 'gg', 'gg.gg@liceobanfi.eu', NULL),
 	('asd', 'prof', 'prof', 'asd', 'ertyuioiutre@kjhgrtyu', 2147483647),
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `immagini` (
   CONSTRAINT `FK_immagini_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella gaiae.immagini: ~14 rows (circa)
+-- Dump dei dati della tabella gaiae.immagini: ~16 rows (circa)
 INSERT INTO `immagini` (`id`, `path`, `matricola`) VALUES
 	('casa10', '../immagini/casa10.jpg', 234),
 	('casa11', '../immagini/check-up-casa.jpg', 456),
