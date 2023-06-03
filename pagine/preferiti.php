@@ -72,7 +72,31 @@
     <p> Queste sono le tue case preferite</p>
             
 			
-			
-    
+				<?php
+
+					$sql = "SELECT immobile.matricola,immobile.citta
+							FROM immobile JOIN account ON account.username=immobile.username
+										JOIN  preferiti ON preferiti.username=account.username
+							WHERE preferiti.username='$username'";
+							echo $sql;
+					$ris = $conn->query($sql) or die("<p>Query fallita!</p>");
+					if ($ris->num_rows == 0) {
+						echo "<p style='text-align:center'>La tua lista dei preferiti è vuota";
+					}
+					else{
+					?>
+					<ol>
+					<?php
+						foreach($ris as $riga){
+							echo "
+								<li>";
+									echo $riga["matricola"]." <br> ".$riga["citta"]."
+								</li>";
+							}
+					?>		
+			</ol>
+		<?php
+					}
+		?>
 </body>
 </html>
