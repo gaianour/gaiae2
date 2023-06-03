@@ -11,42 +11,12 @@
         $username = "";
     }
     
-    if(isset($_POST["preferito"])) {$preferito=$_POST["preferito"];} else{$preferito="";}
+    
 
-   /* $conn = new mysqli($host,$user,$password_database,$database);
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(isset($_POST['matricola'])){
-            $immobile = $_POST['matricola'];
-        } else {
-            $immobile = array();
-        }
-    }*/
+
 
     $conn = new mysqli($host,$user,$password_database,$database);
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if(isset($_POST['preferito'])){
-			$prefe = $_POST['preferito'];
-		} else {
-			$prefe = array();
-		}
-		 $libri = isset($_POST['cod_libri']) ? $_POST['cod_libri'] : array(); // è un if else
-        if($prefe= array()){
-            foreach($prefe as $preferito) {
-                //echo $libro . '<br/>';
-                $sql = "UPDATE preferiti                     /* aggiungere dati  */
-                        SET preferiti.username = '$username'
-                        WHERE preferito = 'NULL'";
-                $conn->query($sql) or die("<p>Query fallita!</p>");
-            }
-        }
-        else{
-            $prefe=$preferito;
-            $sql = "UPDATE preferiti                     /* aggiungere dati  */
-                        SET preferiti.username = '$username'
-                        WHERE preferito != 'NULL'";
-                $conn->query($sql) or die("<p>Query fallita!</p>");
-        }
-	}
+
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +40,7 @@
             <div class="header__nav">
                 <ul>
                     <li><a href="cerca.php">cerca</a></li>
-                    <li><a href="preferiti.php">preferiti</a></li>
+                    
                     <li><a href="inserimento.php">inserisci immobili</a></li>
                     <li><a href="logout.php">logout</a></li>
                 </ul>
@@ -161,19 +131,14 @@
                                     <p> il suo indirizzo è : $via , $n_civico</p>
                                     
                                     ";
-                            
-                                
-                                    
-                                     echo"   aggiungi ai preferiti<input type='checkbox' value='preferito' name='preferito'> 
-                                     <p style='margin-left=10px; padding-top: 10px'><input type='submit' value='Conferma'/></p>";
+
                                          
                                     
                         
                                 
                                     $sql2 = "SELECT path
                                         FROM immagini JOIN immobile ON immobile.matricola=immagini.matricola
-                                        WHERE citta='".$citta."'";  
-                            
+                                        WHERE immobile.matricola=$matricola";  
                                     
                                         echo"<div class='contenuto__item__img item50' style='align:center'>";
                                         
