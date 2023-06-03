@@ -30,6 +30,7 @@
             <div class="header__nav">
                 <ul>
                     <li><a href="cerca.php">cerca</a></li>
+                    <li><a href="preferiti.php"> preferiti</a></li>
                     <li><a href="inserimento.php">inserisci immobili</a></li>
                     <li><a href="logout.php">logout</a></li>
                 </ul>
@@ -84,68 +85,21 @@
                 <tr><td></td><td><input type="radio" name="locali" name="quadrilocale">quadrilocale</td></tr>
                 <tr><td></td><td><input type="radio" name="locali" name="quadrilocale+">quadrilocale+</td></tr>
 
-                <tr>
-                    <td colspan="2">
-                    <form action="../upload.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="file">
-                        <input type="submit" name="upload" value="Carica file">
-                    </form>
-                    </td>
-                </tr>
 
                 <tr>
                     <td colspan="2">
                         <input style="text-align:center" class="input__submit" type="submit" value="inserisci">
                     </td>
                 </tr>
-
-                
-
-
-            
            
         </form>
 
-        
+        <tr><td colspan="2">
+            <a href="aggiungi_immagine.php">vuoi aggiungere un'immagine al tuo database? vai qui.</a>
+        </td></tr>
 
-        <?php
-           
-            if(isset($_POST["matricola"])){
-                echo "qua"; 
-                $conn = new mysqli($host, $user, $password_database, $database);
-
-                if($conn->connect_error){
-                    die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
-                }
-                
-                $myquery = "SELECT matricola 
-                        FROM immobile 
-                        WHERE matricola='" . $_POST["matricola"] . "'";
-                
-
-                $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
-                if ($ris->num_rows > 0) {
-                    echo "<tr><td colspan='2'><h5 class='messaggio__errore'>Un immobile con questa matricola esiste già, si è pregati di scegliere un altro numero</h5></td></tr>";
-                } else {
-
-                    $myquery = "INSERT INTO immobile (matricola, username, superficie, prezzo, n_piani, citta, via, n_civico)
-                                VALUES ('$matricola', '$username', '$superficie', '$prezzo', '$n_piani','$citta', '$via', '$n_civico')";
-
-                    if ($conn->query($myquery) === true) {
-                        
-                        $conn->close();
-
-                        echo "<tr><td colspan='2'><h5 class='messaggio'>Inserimento effettuato con successo!</h5></td></tr>";
-                    } else {
-                        echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
-                    }
-                    
-                }
-            }
-            
-
-        ?>
          </table>
+
 
     </main>
 </body>

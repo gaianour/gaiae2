@@ -24,13 +24,13 @@ if (isset($_POST["password"])) {$password = $_POST["password"];} else {$password
             <div class="header__logo">GAIA</div>
             <div class="header__nav">
                 <ul>
-                    <li>cerca</li>
-                    <li>preferiti</li>
-                    <li>inserisci immobili</li>
-                    <li>logout</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </div>
-            <div class="header__img"><img class="w100" src="../immagini/logo.jpg" alt=""></div>
+            <div class="header__img"></div>
             
         </div>
         
