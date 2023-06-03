@@ -49,10 +49,14 @@ CREATE TABLE IF NOT EXISTS `immagini` (
   CONSTRAINT `FK_immagini_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella gaiae.immagini: ~10 rows (circa)
+-- Dump dei dati della tabella gaiae.immagini: ~14 rows (circa)
 INSERT INTO `immagini` (`id`, `path`, `matricola`) VALUES
 	('casa10', '../immagini/casa10.jpg', 234),
+	('casa11', '../immagini/check-up-casa.jpg', 456),
+	('casa14', '../immagini/de60887e13d22742f7d640417f91922b.jpg', 456),
 	('casa2', '../immagini/casa2.jpg', 234),
+	('casa20', '../immagini/de60887e13d22742f7d640417f91922b.jpg', 456),
+	('casa22', '../immagini/de60887e13d22742f7d640417f91922b.jpg', 456),
 	('casa3', '../immagini/casa3.jpg', 123),
 	('casa4', '../immagini/casa4.jpg', 34),
 	('casa5', '../immagini/casa5.jpg', 123),
