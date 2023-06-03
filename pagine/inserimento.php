@@ -30,7 +30,7 @@
             <div class="header__nav">
                 <ul>
                     <li><a href="cerca.php">cerca</a></li>
-                    <li><a href="preferiti.php"> preferiti</a></li>
+                    
                     <li><a href="inserimento.php">inserisci immobili</a></li>
                     <li><a href="logout.php">logout</a></li>
                 </ul>
