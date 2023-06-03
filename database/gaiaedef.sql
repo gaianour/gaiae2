@@ -30,10 +30,11 @@ CREATE TABLE IF NOT EXISTS `account` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella gaiae.account: ~9 rows (circa)
+-- Dump dei dati della tabella gaiae.account: ~10 rows (circa)
 INSERT INTO `account` (`username`, `nome`, `cognome`, `password`, `email`, `telefono`) VALUES
 	('1', 'g', 'g', 'gg', 'gg.gg@liceobanfi.eu', NULL),
 	('asd', 'prof', 'prof', 'asd', 'ertyuioiutre@kjhgrtyu', 2147483647),
+	('ert66', 'fghj', 'fghj', 'ff', 'gaia.cazzamalli@gmail.com', NULL),
 	('erty', 'erty', 'rtyui', '345h', 'gaia.cazzamalli@gmail.com', 2147483647),
 	('gaia', 'Gaia', 'Cazzamalli', 'gaia22', 'gaia.cazzamalli@gmail.com', 2147483647),
 	('gaia11', 'Gaia', 'Cazzamalli', 'gaia222', 'gaia.cazzamalli@gmail.com', 2147483647),
