@@ -40,9 +40,6 @@
                 if($conn->connect_error){
                     die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
                 }
-                
-            
-                
 
                 $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
                 if ($ris->num_rows > 0) {
