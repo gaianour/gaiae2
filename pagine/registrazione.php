@@ -89,7 +89,9 @@ require("../database/dati_db.php");
                         die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
                     }
                     
-                    
+                    $myquery="SELECT username
+                                FROM account
+                                WHERE username='".$_POST["username"]."'";
                     
 
                     $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
