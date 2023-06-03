@@ -2,5 +2,5 @@
     $host="localhost";
     $user="root";
     $password_database="";
-    $database="gaiae";
+    $database="gaiaedef";
 ?>
