@@ -74,21 +74,22 @@ CREATE TABLE IF NOT EXISTS `immobile` (
   `n_civico` varchar(50) NOT NULL DEFAULT '0',
   `preferito` varchar(50) DEFAULT NULL,
   `locali` varchar(50) DEFAULT NULL,
+  `map` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`matricola`),
   KEY `username` (`username`),
   CONSTRAINT `FK_immobile_account` FOREIGN KEY (`username`) REFERENCES `account` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella gaiae.immobile: ~8 rows (circa)
-INSERT INTO `immobile` (`matricola`, `username`, `superficie`, `prezzo`, `n_piani`, `citta`, `via`, `n_civico`, `preferito`, `locali`) VALUES
-	(34, 'gaia', 567898765, 9888888, 4, 'Bari', 'Macchiavelli', '10', NULL, '4'),
-	(45, 'asd', 6789, 234567, 3, 'Agrate', 'Petrarca', '9', NULL, '2'),
-	(56, 'gaia', 45666, 234566, 3, 'Milano', 'Monti', '8', NULL, '6'),
-	(76, 'erty', 456777, 56789, 6, 'Firenze', 'Alighieri', '56', NULL, '5'),
-	(123, 'gia', 123333, 12345, 2, 'Lesmo', 'Grigan', '9', NULL, '7'),
-	(234, '1', 1234, 123456, 1, 'Monza', 'Manzoni', '23', NULL, '2'),
-	(456, '1', 2345, 34567, 3, 'lesmo', 'tyuio', '4', NULL, '4'),
-	(1233, '1', 1235544, 2345678, 1, 'lesmo', 'rerre', '44', NULL, '6');
+INSERT INTO `immobile` (`matricola`, `username`, `superficie`, `prezzo`, `n_piani`, `citta`, `via`, `n_civico`, `preferito`, `locali`, `map`) VALUES
+	(34, 'gaia', 567898765, 9888888, 4, 'Bari', 'Macchiavelli', '10', NULL, '4', 'https://maps.google.com/?q=Via+Niccol%C3%B2+Machia'),
+	(45, 'asd', 6789, 234567, 3, 'Agrate', 'Petrarca', '9', NULL, '2', 'https://maps.app.goo.gl/frZmpmZjecvtPq2R7'),
+	(56, 'gaia', 45666, 234566, 3, 'Milano', 'Monti', '8', NULL, '6', 'https://maps.app.goo.gl/br1fjvjrqx6tWLpr7'),
+	(76, 'erty', 456777, 56789, 6, 'Firenze', 'Alighieri', '56', NULL, '5', 'https://maps.app.goo.gl/A6sFpRysHezM241e9'),
+	(123, 'gia', 123333, 12345, 2, 'Lesmo', 'Grigan', '9', NULL, '7', 'https://maps.app.goo.gl/qBoR6o4aFnPKqwEY9'),
+	(234, '1', 1234, 123456, 1, 'Monza', 'Manzoni', '23', NULL, '2', 'https://maps.google.com/?q=Via+Alessandro+Manzoni%'),
+	(456, '1', 2345, 34567, 3, 'lesmo', 'tyuio', '4', NULL, '4', 'https://maps.app.goo.gl/qctQy1YqaUA4fz2V6'),
+	(1233, '1', 1235544, 2345678, 1, 'lesmo', 'rerre', '44', NULL, '6', 'https://maps.app.goo.gl/bjdfmhpW8KiETrNE6');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

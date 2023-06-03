@@ -93,7 +93,7 @@
                         //      WHERE citta LIKE '%$citta%'
                         //          AND superficie <= $superficie
                         //          AND prezzo <= $prezzo";
-                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, n_piani,via,n_civico
+                        $sql = "SELECT immobile.matricola, citta, superficie, prezzo, n_piani,via,n_civico,locali,map
                                 FROM immobile 
                                 WHERE 1=1";
 
@@ -119,7 +119,9 @@
                                 $n_piani=$riga["n_piani"];
                                 $via=$riga["via"];
                                 $n_civico=$riga["n_civico"];
-                                //$preferito=$riga["preferito"];
+                                $locali=$riga["locali"];
+                                $map=$riga["map"];
+                                
 
 
                                 echo"
@@ -129,9 +131,11 @@
                                     <p> la sua superficie è: $superficie mq</p>
                                     <p> il numero di piani è: $n_piani</p>
                                     <p> il suo indirizzo è : $via , $n_civico</p>
-                                    
-                                    ";
+                                    <p> Il numero di locali è: $locali</p> ";
 
+                                if($map!='(NULL)'){
+                                    echo"<p> vai a scoprire la sua posizioe su <a href='$map'>google maps</a> </p>";
+                                }
                                          
                                     
                         
