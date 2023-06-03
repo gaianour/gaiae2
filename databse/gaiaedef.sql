@@ -30,14 +30,16 @@ CREATE TABLE IF NOT EXISTS `account` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella gaiae.account: ~7 rows (circa)
+-- Dump dei dati della tabella gaiae.account: ~8 rows (circa)
 INSERT INTO `account` (`username`, `nome`, `cognome`, `password`, `email`, `telefono`) VALUES
 	('1', 'g', 'g', 'gg', 'gg.gg@liceobanfi.eu', NULL),
 	('asd', 'prof', 'prof', 'asd', 'ertyuioiutre@kjhgrtyu', 2147483647),
 	('erty', 'erty', 'rtyui', '345h', 'gaia.cazzamalli@gmail.com', 2147483647),
 	('gaia', 'Gaia', 'Cazzamalli', 'gaia22', 'gaia.cazzamalli@gmail.com', 2147483647),
 	('gaia11', 'Gaia', 'Cazzamalli', 'gaia222', 'gaia.cazzamalli@gmail.com', 2147483647),
+	('gaiaa99', 'ddddd', 'fff', 'aa', 'gaia.cazzamalli@gmail.com', NULL),
 	('gg1', 'gaia', 'cazzamalli', 'hh', 'gaia.cazzamalli@gmail.com', 2147483647),
+	('gggg', 'yyyy', 'iiii', 'uu', 'gaia.cazzmalli@gmail.com', NULL),
 	('gia', 'gaia', 'cazzamalli', 'gaia.2005', 'gaia.cazzamalli@liceobanfi.eu', NULL);
 
 -- Dump della struttura di tabella gaiae.immagini
@@ -50,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `immagini` (
   CONSTRAINT `FK_immagini_immobile` FOREIGN KEY (`matricola`) REFERENCES `immobile` (`matricola`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella gaiae.immagini: ~14 rows (circa)
+-- Dump dei dati della tabella gaiae.immagini: ~16 rows (circa)
 INSERT INTO `immagini` (`id`, `path`, `matricola`) VALUES
 	('casa10', '../immagini/casa10.jpg', 234),
 	('casa11', '../immagini/check-up-casa.jpg', 456),
