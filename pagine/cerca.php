@@ -3,7 +3,7 @@
     $host= "localhost";
     $user= "root";
     $password_database= "";
-    $database = "gaiaedef";
+    $database = "gaiae";
 
     if (isset($_SESSION["username"])) {
         $username = $_SESSION["username"];
