@@ -34,7 +34,7 @@
                     <img class="float-left" src="../immagini/index1.jpg" alt="immagine1">
                 </div>
                 <div class="contenuto__item__text">
-                    <h3>Ricerca subito un immobile</h3>
+                    <a href="cerca.php"><h3>Ricerca subito un immobile</h3></a>
                     <h4>Stai cercando casa? visita la sezione "cerca" del nostro sito per non perderti neanche una novità!</h4>
                 </div>
             </div>
